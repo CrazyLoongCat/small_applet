@@ -1,0 +1,104 @@
+<swiper autoplay="true" class="imgSwiper">
+  <block wx:for="{{bannerList}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item.imgurl}}" style="width: 100%;height: 100%;"></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+
+<view class="operation clearfloat">
+  <view class="operationItem">
+    <navigator url="/pages/order/orderList/index">
+      <view>
+        <view class="imgBox">
+          <image src="../../img/chakandingdan1.png" mode="" />
+        </view>
+        <view>
+          订单查询
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <view class="operationItem">
+    <navigator url="/pages/order/submitOrder/index">
+      <view>
+        <view class="imgBox">
+          <image src="../../img/fanli1.png" mode="" />
+        </view>
+        <view>
+          提交订单
+        </view>
+      </view>
+    </navigator>
+
+  </view>
+  <view class="operationItem">
+    <navigator url="/pages/order/submitList/index">
+    <view>
+      <view class="imgBox">
+        <image src="../../img/dingdan1.png" mode="" />
+      </view>
+      <view>
+        提交记录
+      </view>
+    </view>
+    </navigator>
+  </view>
+  <view class="operationItem">
+    <view>
+      <view class="imgBox">
+        <image src="../../img/tixing1.png" mode="" />
+      </view>
+      <view>
+        新手教程
+      </view>
+    </view>
+  </view>
+</view>
+<view class="clearfloat box">
+  <view class="fl swiper-left">
+    <!-- <van-icon name="bell"  style="color: ;font-size:18px;"/> -->
+    <van-icon name="volume-o" style="color:red;font-size:18px;" />
+  </view>
+  <swiper class='swiper-box fl' vertical="true" autoplay="true" interval="4000" duration="500" circular="true">
+    <block wx:for="{{tips}}" wx:key="index">
+      <swiper-item>
+        {{item.tipMessage}} </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class="footer ">
+  <view class="footerTitle">
+    免税店入口
+  </view>
+
+  <view class="clearfloat">
+    <block wx:for="{{platformsList}}" wx:key="index">
+      <view class="grid " data-platformUrl="{{item.platformUrl}}" bindtap="platformsItemClick">
+        <view class="gridItem">
+          <block wx:if="{{index==0}}">
+            <image src="https://huahua.bj.cn/webapi + '{{item.platformImage}}'" mode="" />
+          </block>
+          <block wx:if="{{index==1}}">
+            <image src="https://huahua.bj.cn/webapi + '{{item.platformImage}}'" mode="" />
+          </block>
+          <block wx:if="{{index==2}}">
+            <image src="https://huahua.bj.cn/webapi + '{{item.platformImage}}'" mode="" />
+          </block>
+          <view>
+            {{item.platformName}}
+          </view>
+          <view class="twoView">
+            {{item.smallShow}}
+          </view>
+          <view class="treeView">
+            {{item.smallTitle}}
+          </view>
+        </view>
+      </view>
+    </block>
+
+  </view>
+</view>

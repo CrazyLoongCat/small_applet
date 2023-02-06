@@ -1,0 +1,6 @@
+
+page {
+  background-color: rgb(18, 23, 61);
+  padding-top: 20rpx;
+  
+}

@@ -1,0 +1,79 @@
+.TwoscrollBox,
+.scrollBox {
+  white-space: nowrap;
+  width: 100%;
+}
+
+.money {
+  margin: 20rpx 0;
+}
+
+.TwoscrollBox .itemBox {
+  text-align: center;
+  padding: 30rpx;
+  display: inline-block;
+  font-size: 32rpx;
+}
+
+.scrollBox .itemBox {
+  text-align: center;
+  width: 25%;
+  display: inline-block;
+  font-size: 30rpx;
+  padding: 10rpx 0;
+}
+
+.TwoscrollBox .itemBox .footer,
+.scrollBox .itemBox .footer {
+  width: 80%;
+  margin: 0 auto;
+  height: 6rpx;
+  border-radius: 40rpx;
+  margin-top: 12rpx;
+}
+
+.active {
+  color: red;
+}
+
+.active .footer {
+  background: red;
+}
+
+.txBtn {
+  position: fixed;
+  bottom: 100rpx;
+  right: 0;
+  width: 120rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+
+.orderListBox {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+  font-size: 32rpx;
+  padding: 30rpx;
+  border: 1px solid #999;
+  border-radius: 20rpx;
+  background-color: #fff;
+}
+
+.orderListBox view {
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.orderListBox .time {
+  color: #999;
+  font-size: 30rpx;
+}
+
+.orderListBox .name {}

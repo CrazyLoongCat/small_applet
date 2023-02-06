@@ -1,0 +1,114 @@
+<view class="balance">
+  <view class="top" >
+      <view class="topTitle"  >
+        可提现金额
+      </view>
+      <view  class="balanceNum" >
+        ¥{{balance}}
+      </view>
+      <view  class="topTitle" >
+        满15元即可提现
+      </view>
+  </view>
+  <view class="middle" >
+      <view class="middleTop"  >
+        盆友请选择您的提现方式
+      </view>
+      <view>
+        <radio-group class="balanceType" bindchange="bindchange">
+          <radio value="zhifubao"  class="zhifubao">
+            <label for="apple" >支付宝</label>
+            <!-- <span class="bianji" catchtap='bianJiZfb'>编辑</span> -->
+          </radio>
+          <view class="bianjiz" wx:if='{{isShowZ}}'>
+            <view class="itemView">
+              <label class="info">收款人姓名：</label>
+              <input class="input"  
+              value="{{zhifubaoInfo.userName}}"  bindinput="zhifubaoUser" />
+            </view>
+            <view class="itemView">
+              <label class="info">支付宝账号：</label>
+              <input class="input"  
+              value="{{zhifubaoInfo.account}}" bindinput="zhifubaoAccount"/>
+            </view>
+            <!-- <view class="itemView">
+              <label class="info">身份证：</label>
+              <input class="input" 
+              bindinput="passWdInput" />
+            </view> -->
+            <view class="tip">
+              接有关部门通知，打款需核验收款人信息，请勿担心，我司不会留存该信息
+            </view>
+            <view class="queren" catchtap='querenZfb'>
+              确认
+            </view>
+          </view>
+          <radio value="weixin" checked="true" color="blue" class="weixin">
+            <label for="pear">微信</label>
+            <!-- <span class="bianji" catchtap='bianJiWx'>编辑</span> -->
+          </radio>
+          <view class="bianjiz" wx:if='{{isShowW}}'>
+            <view class="itemView">
+              <label class="info">收款人姓名：</label>
+              <input class="input"  
+              value="{{weixinInfo.userName}}" bindinput="weixinUser" />
+            </view>
+            <view class="itemView">
+              <label class="info">微信号：</label>
+              <input class="input"  
+              value="{{weixinInfo.account}}" bindinput="weixinAccount"/>
+            </view>
+            <!-- <view class="itemView">
+              <label class="info">身份证：</label>
+              <input class="input" 
+              bindinput="passWdInput" />
+            </view> -->
+            <view class="tip">
+              接有关部门通知，打款需核验收款人信息，请勿担心，我司不会留存该信息
+            </view>
+            <view class="queren" catchtap='querenWx'>
+              确认
+            </view>
+          </view>
+        </radio-group>
+      </view>
+      <button class="tixianBtn" bindtap="applyBalance">申请提现</button>
+      <view  class="balanceBtn" bindtap="next_calculator">
+        提现记录
+      </view>
+  </view>
+
+    <view class="tables">
+      <view>
+        提现说明
+      </view>
+      <view>
+        所有佣金成立的环节已经全部通过，奖励资金会汇总到可提现余额，点击【提现】，即可发起提现。
+      </view>
+      <view>
+        1.可提现佣金满20元可申请提现。
+      </view>
+     <view>
+      2.提现申请后，平台将在72小时内审核发放。
+     </view>
+      <view>
+        3.所有的返利都是基于交易成功，如出现售后性操作流程，订单就会失效，返利也会没有。
+      </view>
+      <view>
+        4.如提现失败，需修改正确的身份信息等待再次打款。
+      </view>
+     <view>
+      5.如有疑问，可咨询客服。
+     </view>
+    </view>
+
+
+</view>
+<view>
+
+
+
+   
+  
+
+</view>

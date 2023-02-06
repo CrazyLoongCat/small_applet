@@ -1,0 +1,82 @@
+.operationItem {
+  width: 25%;
+  float: left;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.imgSwiper {
+  padding-bottom: 50rpx;
+}
+
+.imgBox {
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: #FEE787;
+}
+
+.operationItem image {
+
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 10rpx;
+  border-radius: 50%;
+
+}
+
+.swiper-left {
+  height: 90rpx;
+  line-height: 90rpx;
+  padding: 0 20rpx;
+  text-align: center;
+}
+
+.box {
+  margin: 20rpx 0;
+}
+
+.swiper-box {
+  height: 90rpx;
+  line-height: 90rpx;
+  width: 80%;
+  background-color: fff;
+  font-size: 32rpx;
+}
+
+.footerTitle {
+  font-size: 36rpx;
+  margin: 10rpx 0 30rpx 16rpx;
+}
+
+.footer {
+  border-top: 20rpx solid #eee;
+}
+
+.grid {
+  width: 33.333%;
+  float: left;
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.gridItem image {
+  width: 90%;
+  height: 300rpx;
+}
+
+.twoView {
+  color: orange;
+  margin: 10rpx 0;
+}
+
+.treeView {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 30rpx;
+  text-align: center;
+  color: red;
+  background-color: #FECB60;
+}

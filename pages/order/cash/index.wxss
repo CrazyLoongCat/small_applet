@@ -1,0 +1,59 @@
+page {
+  background-color: #12163c;
+  color: #ffff;
+}
+
+.moneyBox {
+  width: 88%;
+  border-radius: 30rpx;
+  margin: 60rpx auto;
+  padding: 20rpx;
+  font-size: 24rpx;
+  background-color: rgba(255, 255, 255, .3);
+  color: #ffff;
+}
+
+.money {
+  font-size: 44rpx;
+  margin: 24rpx 0;
+}
+
+.tableList {
+  width: 92%;
+  margin: 0 auto;
+  padding: 20rpx 0;
+  background-color: rgba(255, 255, 255, .6);
+}
+
+.tableList.tableList1 {
+  background: none;
+  border-bottom: 1px solid #fff;
+}
+
+.tableList view {
+  width: 25%;
+  font-size: 30rpx;
+}
+
+.txtype {
+  width: 92%;
+  margin: 0 auto;
+  font-size: 34rpx;
+  margin-bottom: 30rpx;
+}
+
+.msg {
+  font-size: 30rpx;
+  color: #c5cb8f;
+}
+
+.txBtn {
+  font-size: 34rpx;
+  padding: 4rpx 20rpx;
+  /* margin: 30rpx auto; */
+  text-align: center;
+  background-color: #91c8cd;
+  border-radius: 50rpx;
+  /* height: 100rpx;
+  line-height: 100rpx; */
+}

@@ -1,0 +1,10 @@
+<view class="balance">
+    <view class="tables">
+        <table-view  
+          headers="{{tableHeader}}" 
+          data="{{ row }}" 
+          stripe="{{ stripe }}"
+          border="{{ border }}"
+      />
+    </view>
+</view>

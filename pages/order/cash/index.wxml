@@ -1,0 +1,64 @@
+<view class="moneyBox">
+  <view>
+    可提现收益
+  </view>
+  <view class="money clearfloat">
+    <view class="fl"> ¥123</view>
+
+    <view class="txBtn fr">
+      提现
+    </view>
+  </view>
+  <view>
+    满13元可提现
+  </view>
+</view>
+
+
+<view class="txtype">
+  <!-- <view>
+    朋友请选择您的提现方式:
+  </view>
+  <view class="msg">
+    提示
+  </view>
+  <view>
+    支付宝(xxx)
+  </view>
+  <view>
+    微信零钱包
+  </view> -->
+
+</view>
+
+
+<view class="tableList clearfloat">
+  <view class="fl">
+    提现日期
+  </view>
+  <view class="fl">
+    金额
+  </view>
+  <view class="fl">
+    账号
+  </view>
+  <view class="fl">
+    状态
+  </view>
+</view>
+<block wx:for="{{txList}}" wx:key="index">
+  <view class="tableList  tableList1 clearfloat">
+    <view class="fl">
+      {{item.rebateSubmitTime}}
+    </view>
+    <view class="fl">
+      {{item.rebateSum}}
+    </view>
+    <view class="userId">
+      {{item.userId}}
+    </view>
+    <view class="fl">
+      {{item.rebateStatus}}
+    </view>
+  </view>
+</block>
