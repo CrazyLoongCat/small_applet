@@ -35,6 +35,9 @@
         <view>
           返利金额: {{item.returnAmt}}
         </view>
+        <view>
+          订单状态: {{item.checkStatusName}}
+        </view>
         <view class="time">
           下单时间: {{item.placedTime}}
         </view>

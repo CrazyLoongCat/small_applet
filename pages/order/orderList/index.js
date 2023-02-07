@@ -93,7 +93,7 @@
    async orderListFn() {
      var data;
      var that = this;
-
+      console.log(this.data);
      if (this.data.orderTypeList[this.data.orderTypeIndex].codeValue == "全部订单") {
        if (this.data.platformsList[this.data.platformIndex].platformName == "全部") {
          data = {
@@ -104,7 +104,7 @@
          data = {
            current: this.data.current, //当前页数
            size: this.data.size, //每页笔数 
-           platform: this.data.platformsList[this.data.platformIndex].id
+           platform: this.data.platformsList[this.data.platformIndex].platformApCode
          }
        }
      } else {
@@ -112,14 +112,14 @@
          data = {
            current: this.data.current, //当前页数
            size: this.data.size, //每页笔数 
-           checkStatus: this.data.orderTypeList[this.data.orderTypeIndex].id, //对账状态
+           checkStatus: this.data.orderTypeList[this.data.orderTypeIndex].codeKey, //对账状态
          }
        } else {
          data = {
            current: this.data.current, //当前页数
            size: this.data.size, //每页笔数 
-           platform: this.data.platformsList[this.data.platformIndex].id,
-           checkStatus: this.data.orderTypeList[this.data.orderTypeIndex].id, //对账状态
+           platform: this.data.platformsList[this.data.platformIndex].platformApCode,
+           checkStatus: this.data.orderTypeList[this.data.orderTypeIndex].codeKey, //对账状态
          }
        }
      }
