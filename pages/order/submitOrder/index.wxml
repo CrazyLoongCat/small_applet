@@ -56,19 +56,19 @@
     </view>
     <view class="fl Star">*</view>
     <view class="fl right clearfloat">
-      <view class="fl">%{{orderTypeList[orderTypeIndex].rebateRate}}</view>
+      <view class="fl">{{orderTypeList[orderTypeIndex].rebateRate}}%</view>
     </view>
     <view class="fl Tips " style="display: {{orderTypeIndex==''?'block':'none'}};">请先选择购物平台</view>
   </view>
   <view class="clearfloat strip">
     <view class="fl left">
-      <view style="color: #fff;background-color: red; text-align: center;  ;margin: 0 auto; height:60rpx;line-height: 60rpx; margin-top: 20rpx; border-radius: 12rpx; transform: skew(20deg,0);">
+      <view style="color: #fff;background-color: red; text-align: center;  ;margin: 0 auto; height:60rpx;line-height: 60rpx; margin-top: 20rpx; border-radius: 12rpx; ">
         佣金金额:
       </view>
     </view>
 
     <view class="fl Star">*</view>
-    <view class="fr right"><input type="text" disabled="true" value="{{ AntiMoney}}" placeholder="反米金额" /></view>
+    <view class="fr right"><input type="text" disabled="true" value="{{ AntiMoney}}" placeholder="佣金金额" /></view>
   </view>
 
   <view class="footerBtn clearfloat">

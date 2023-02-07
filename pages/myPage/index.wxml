@@ -1,15 +1,4 @@
 <view class="topMsg">
-  <view wx:if="{{canIUseOpenData}}" class="balance">
-      <view   >
-        余额
-      </view>
-      <view   >
-        {{balance}}
-      </view>
-      <view  class="balanceBtn" bindtap="next_calculator">
-        提现
-      </view>
-    </view>
   <view class="userinfo">
    
     <block wx:if="{{canIUseOpenData}}">
@@ -28,9 +17,20 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
+
 </view>
 <view>
-
+<view wx:if="{{canIUseOpenData}}" class="balance">
+    <view   >
+      可提现收益
+    </view>
+    <view   >
+      ¥{{balance}}
+    </view>
+    <view  class="balanceBtn" bindtap="next_calculator">
+      提现
+    </view>
+  </view>
   <van-cell value="查看" icon="shop-o" is-link url="/pages/order/orderList/index">
     <view slot="title">
       <view class="van-cell-text">查看订单</view>
@@ -41,12 +41,17 @@
       <view class="van-cell-text">余额明细</view>
     </view>
   </van-cell> -->
-  <van-cell value="查看" icon="shop-o" is-link>
+  <van-cell value="查看" icon="shop-o" is-link url='/pages/newCusterCourse/index'>
     <view slot="title">
       <view class="van-cell-text">新手教程</view>
     </view>
   </van-cell>
-  <van-cell value="查看" icon="shop-o" is-link>
+  <van-cell value="查看" icon="shop-o" is-link url='/pages/balanceHistory/index'>
+    <view slot="title">
+      <view class="van-cell-text">提现记录</view>
+    </view>
+  </van-cell>
+  <van-cell value="查看" icon="shop-o" is-link url="/pages/custerServer/index">
     <view slot="title">
       <view class="van-cell-text">联系客服</view>
     </view>

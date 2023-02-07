@@ -1,0 +1,3 @@
+<view class="server">
+    <image src="{{imageUrl}}" alt="" mode='widthFix'/>
+</view>

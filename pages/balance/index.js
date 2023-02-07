@@ -113,12 +113,6 @@ Page({
       }
       
     },
-    //点击提现跳转
-    next_calculator:function () {
-      wx.navigateTo({
-        url: '/pages/balanceHistory/index',
-      })
-    },
     //支付宝姓名输入
     zhifubaoUser(e){
       this.setData({

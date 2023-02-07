@@ -86,8 +86,3 @@ page {
   width: 80%;
   margin: 0 auto;
 }
-.balanceBtn{
-  text-align: right;
-  color: yellow;
-  margin-top: 20rpx;
-}

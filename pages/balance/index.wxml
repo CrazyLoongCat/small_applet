@@ -73,9 +73,6 @@
         </radio-group>
       </view>
       <button class="tixianBtn" bindtap="applyBalance">申请提现</button>
-      <view  class="balanceBtn" bindtap="next_calculator">
-        提现记录
-      </view>
   </view>
 
     <view class="tables">

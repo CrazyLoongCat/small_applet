@@ -1,5 +1,4 @@
 .topMsg{
-  position: relative;
   padding: 50rpx 0;
   background-color: orange;
   
@@ -11,11 +10,8 @@
   align-items: center;
   color: #aaa;
 }
-.userNames{
- 
-}
+
 .balanceBtn{
-  
   width: 100rpx;
   background-color: orange;
   border: 1px solid #fff;
@@ -23,13 +19,12 @@
   text-align: center;
 }
 .balance{
-  position: absolute;
-  top: 35%;
-  left: 10%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 30rpx;
   color: #aaa;
-  text-align: center;
 }
-
 .userinfo-avatar {
   display: flex;
   flex-direction: column;
