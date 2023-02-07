@@ -31,16 +31,26 @@
       提现
     </view>
   </view>
-  <van-cell value="查看" icon="shop-o" is-link url="/pages/order/orderList/index">
+
+  <view class="home_grids">
+   <block wx:for="{{griddata}}" wx:key="id">
+    <navigator url="{{item.url}}" class='home_grid'>
+     <image src="{{item.img}}" class="home_icon"></image>
+     <view class="home_grid_text">{{item.name}}</view>
+    </navigator>
+   </block>
+  </view>
+
+  <!-- <van-cell value="查看" icon="shop-o" is-link url="/pages/order/orderList/index">
     <view slot="title">
       <view class="van-cell-text">查看订单</view>
     </view>
   </van-cell>
-  <!-- <van-cell value="查看" icon="shop-o" is-link url="/pages/order/cash/index">
+  <van-cell value="查看" icon="shop-o" is-link url="/pages/order/cash/index">
     <view slot="title">
       <view class="van-cell-text">余额明细</view>
     </view>
-  </van-cell> -->
+  </van-cell>
   <van-cell value="查看" icon="shop-o" is-link url='/pages/newCusterCourse/index'>
     <view slot="title">
       <view class="van-cell-text">新手教程</view>
@@ -65,6 +75,6 @@
     <view slot="title">
       <view class="van-cell-text">我的订单</view>
     </view>
-  </van-cell>
+  </van-cell> -->
 
 </view>

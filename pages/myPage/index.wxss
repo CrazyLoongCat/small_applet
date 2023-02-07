@@ -39,3 +39,23 @@
 .usermotto {
   margin-top: 200px;
 }
+.home_grids{
+  border-top: 1rpx solid #D9D9D9;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.home_icon{
+  width: 100rpx;
+  height: 100rpx;
+}
+.home_grid{
+   position: relative;
+   float: left;
+   padding: 20px 10px;
+   width: 33.3333333%;
+   box-sizing: border-box;
+   border-right: 1rpx solid #D9D9D9;
+   border-bottom: 1rpx solid #D9D9D9;
+   text-align: center;
+}
+  

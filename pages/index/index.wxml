@@ -1,7 +1,7 @@
 <swiper autoplay="true" class="imgSwiper">
   <block wx:for="{{bannerList}}" wx:key="index">
     <swiper-item>
-      <image src="{{item.imgurl}}" style="width: 100%;height: 100%;"></image>
+      <image src="{{item.imgurl}}" style="width: 100%;height: 100%;" ></image>
     </swiper-item>
   </block>
 </swiper>
@@ -45,7 +45,7 @@
     </view>
     </navigator>
   </view>
-  <view class="operationItem">
+  <view class="operationItem" bindtap="next_calculator">
     <view>
       <view class="imgBox">
         <image src="../../img/tixing1.png" mode="" />
@@ -76,7 +76,7 @@
 
   <view class="clearfloat">
     <block wx:for="{{platformsList}}" wx:key="index">
-      <view class="grid " data-platformUrl="{{item.platformUrl}}" bindtap="platformsItemClick">
+      <view class="grid " data-platformUrl="{{item}}" bindtap="platformsItemClick">
         <view class="gridItem">
           <block >
             <image src="{{'https://huahua.bj.cn/webapi' +  item.platformImage}}" mode="" />

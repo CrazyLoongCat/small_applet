@@ -89,34 +89,26 @@ Page({
       }
       console.log(this.data.bannerList,'bannerList')
     },
-
+//新手教程
+next_calculator(){
+  wx.navigateTo({
+    url: '/pages/newCusterCourse/index',
+  })
+},
   platformsItemClick(e) {
-    wx.showModal({
-      title: '',
-      content: '复制链接去购物',
-      success(res) {
-        if (res.confirm) {
-          wx.setClipboardData({ //复制文本
-            data: e.currentTarget.dataset.platformurl,
-            success: function (res) {
-              wx.getClipboardData({ //获取复制文本
-                success: function (res) {
-                  console.log(res)
-                  wx.showToast({
-                    title: '复制成功',
-                    icon: "none", //是否需要icon
-                    mask: "ture" //是否设置点击蒙版，防止点击穿透
-                  })
-                }
-              })
-            }
-          })
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
-    })
+    
+    if( e.currentTarget.dataset.platformurl.urlType == 1 ){
 
+    }else if( e.currentTarget.dataset.platformurl.urlType == 2 ){
+      let urls = 'https://huahua.bj.cn/webapi/' + e.currentTarget.dataset.platformurl.platformImage
+      wx.navigateTo({
+        url: '/pages/indexImageUrl/index?url='+urls
+      })
+    }else if( e.currentTarget.dataset.platformurl.urlType == 3 ){
+
+    }else if( e.currentTarget.dataset.platformurl.urlType == 4 ){
+
+    }
   },
 
   /**

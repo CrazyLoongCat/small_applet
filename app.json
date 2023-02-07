@@ -8,9 +8,9 @@
     "pages/order/submitList/index",
     "pages/balance/index",
     "pages/balanceHistory/index",
-    "pages/custerServer/index",
-    "pages/newCusterCourse/index"
-    
+    "pages/custerServer/index", 
+    "pages/newCusterCourse/index",
+    "pages/indexImageUrl/index"
   ],
   
     "usingComponents": {
