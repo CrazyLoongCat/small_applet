@@ -93,7 +93,6 @@
    async orderListFn() {
      var data;
      var that = this;
-      console.log(this.data);
      if (this.data.orderTypeList[this.data.orderTypeIndex].codeValue == "全部订单") {
        if (this.data.platformsList[this.data.platformIndex].platformName == "全部") {
          data = {

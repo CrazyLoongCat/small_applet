@@ -50,9 +50,7 @@
   </view>
   <view class="clearfloat strip scale">
     <view class="fl left">
-      <view style="color: #fff;background-color: red; text-align: center; margin: 0 auto; height:60rpx;line-height: 60rpx; margin-top: 20rpx; border-radius: 12rpx;">
-        佣金比例:
-      </view>
+      佣金比例:
     </view>
     <view class="fl Star">*</view>
     <view class="fl right clearfloat">
@@ -62,26 +60,17 @@
   </view>
   <view class="clearfloat strip">
     <view class="fl left">
-      <view style="color: #fff;background-color: red; text-align: center;  ;margin: 0 auto; height:60rpx;line-height: 60rpx; margin-top: 20rpx; border-radius: 12rpx; ">
-        佣金金额:
-      </view>
+      佣金金额:
     </view>
-
     <view class="fl Star">*</view>
     <view class="fr right"><input type="text" disabled="true" value="{{ AntiMoney}}" placeholder="佣金金额" /></view>
   </view>
 
   <view class="footerBtn clearfloat">
-    <block wx:if="{{!token.phoneFlag}}">
+    <block >
       <view bindtap="submitOrder">
         提交
       </view>
     </block>
-    <block wx:else>
-      <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
-    </block>
-    <view>
-      去邀请
-    </view>
   </view>
 </view>
