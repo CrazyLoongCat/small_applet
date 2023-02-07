@@ -78,14 +78,8 @@
     <block wx:for="{{platformsList}}" wx:key="index">
       <view class="grid " data-platformUrl="{{item.platformUrl}}" bindtap="platformsItemClick">
         <view class="gridItem">
-          <block wx:if="{{index==0}}">
-            <image src="https://huahua.bj.cn/webapi + '{{item.platformImage}}'" mode="" />
-          </block>
-          <block wx:if="{{index==1}}">
-            <image src="https://huahua.bj.cn/webapi + '{{item.platformImage}}'" mode="" />
-          </block>
-          <block wx:if="{{index==2}}">
-            <image src="https://huahua.bj.cn/webapi + '{{item.platformImage}}'" mode="" />
+          <block >
+            <image src="{{'https://huahua.bj.cn/webapi' +  item.platformImage}}" mode="" />
           </block>
           <view>
             {{item.platformName}}

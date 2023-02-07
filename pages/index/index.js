@@ -24,7 +24,6 @@ Page({
       this.getCodeTypeFn()
       this.getPlatformsFn()
       this.getLunbo()
-      this.getIndexImage()
     } else {
       app.testDataCallback = testData => {
         if (testData != '') {
@@ -88,6 +87,7 @@ Page({
           bannerList: data
         })
       }
+      console.log(this.data.bannerList,'bannerList')
     },
 
   platformsItemClick(e) {
