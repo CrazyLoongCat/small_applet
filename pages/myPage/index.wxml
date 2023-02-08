@@ -20,17 +20,22 @@
 
 </view>
 <view>
-<view wx:if="{{canIUseOpenData}}" class="balance">
+<view wx:if="{{canIUseOpenData}}" class="balancebg">
+  <view wx:if="{{canIUseOpenData}}" class="balance">
     <view   >
       可提现收益
     </view>
-    <view   >
+    <view  class = "moneyshow" >
       ¥{{balance}}
     </view>
+  </view>
+  <view wx:if="{{canIUseOpenData}}" class="balanceBtnbg">
     <view  class="balanceBtn" bindtap="next_calculator">
-      提现
+      申请提现
     </view>
   </view>
+</view>
+
 
   <view class="home_grids">
    <block wx:for="{{griddata}}" wx:key="id">

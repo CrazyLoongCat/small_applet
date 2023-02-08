@@ -43,7 +43,7 @@
               确认
             </view>
           </view>
-          <radio value="weixin" checked="true" color="blue" class="weixin">
+          <radio value="weixin" checked="true" class="weixin">
             <label for="pear">微信</label>
             <!-- <span class="bianji" catchtap='bianJiWx'>编辑</span> -->
           </radio>

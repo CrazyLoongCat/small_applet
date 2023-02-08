@@ -12,18 +12,36 @@
 }
 
 .balanceBtn{
-  width: 100rpx;
+  width: 200rpx;
   background-color: orange;
   border: 1px solid #fff;
-  border-radius: 10rpx;
+  border-radius: 30rpx;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  height: 60rpx;
+}
+.balanceBtnbg{
+  display: flex;
+  flex-direction: row;
+  padding-right: 30rpx;
+  padding-top: 30rpx;
 }
 .balance{
   display: flex;
-  justify-content: center;
   flex-direction: column;
   padding-left: 30rpx;
-  color: #aaa;
+  padding-top: 30rpx;
+}
+.balancebg{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding-left: 30rpx;
+}
+.moneyshow{
+  font-weight: bold;
+  padding-left: 40rpx;
 }
 .userinfo-avatar {
   display: flex;
