@@ -125,9 +125,9 @@ next_calculator(){
     }else if( e.currentTarget.dataset.platformurl.urlType == 3 ){
       wx.navigateToMiniProgram({
         appId: 'wx83f3046fd293eefa',  //appid
-        path: '/pages/index/index',//path
+        path: 'pages/publicPages/goodDetails/index?goodsId=01C016826&shareUrl=77C4C9FAAE3180A057B55B17637EE1CF061BD476D41457E3',//path
         extraData: {  //参数
-          foo: 'bar'
+          staffId: '2164'
         },
         envVersion: 'release', //开发版develop 开发版 trial   体验版 release 正式版 
         success(res) {

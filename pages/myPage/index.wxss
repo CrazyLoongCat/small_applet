@@ -15,11 +15,11 @@
   width: 200rpx;
   background-color: orange;
   border: 1px solid #fff;
-  border-radius: 30rpx;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  height: 60rpx;
+  border-radius: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 .balanceBtnbg{
   display: flex;
