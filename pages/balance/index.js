@@ -54,12 +54,14 @@ Page({
     if( e.detail.value == 'zhifubao' ){
       var that = this;
       that.setData({
-        isShowZ: true
+        isShowZ: true,
+        isShowW: false
       })
     }else if( e.detail.value == 'weixin'  ){
       var that = this;
       that.setData({
-        isShowY: true
+        isShowZ: false,
+        isShowW: true
       })
     }
     that.setData({
@@ -100,15 +102,15 @@ Page({
         data: {
         }
       });
-      if( res.payType == '1' ){
+      if( res.data.payType == '1' ){
         this.setData({
-          'weixinInfo.userName': res.receiveName,
-          'weixinInfo.account': res.payPlatformAccount
+          'weixinInfo.userName': res.data.receiveName,
+          'weixinInfo.account': res.data.payPlatformAccount
         })
-      }else if( res.payType == '2' ){
+      }else if( res.data.payType == '2' ){
         this.setData({
-          'zhifubaoInfo.userName': res.receiveName,
-          'zhifubaoInfo.account': res.payPlatformAccount
+          'zhifubaoInfo.userName': res.data.receiveName,
+          'zhifubaoInfo.account': res.data.payPlatformAccount
         })
       }
       
@@ -169,7 +171,7 @@ Page({
          }
       }
       const res = await request({
-        method: "GET",
+        method: "POST",
         url: "/webapi/ap/user/rebateRecord/applyRebate",
         data: {
           payType: this.data.changeValue == 'weixin'? "1":"2", 
@@ -185,7 +187,7 @@ Page({
         })
       }else{
         wx.showToast({
-          title: '提现失败',
+          title: res.msg,
           icon: 'error',
           duration: 2000//持续的时间
         })
