@@ -10,7 +10,8 @@
     "pages/balanceHistory/index",
     "pages/custerServer/index", 
     "pages/newCusterCourse/index",
-    "pages/indexImageUrl/index"
+    "pages/indexImageUrl/index",
+    "pages/h5index/index"
   ],
   
     "usingComponents": {

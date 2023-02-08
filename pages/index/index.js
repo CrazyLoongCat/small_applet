@@ -10,7 +10,8 @@ Page({
   data: {
     tips: [],
     platformsList: [],
-    bannerList: []
+    bannerList: [],
+    urlArr: []
   },
 
   /**
@@ -98,13 +99,42 @@ next_calculator(){
   platformsItemClick(e) {
     
     if( e.currentTarget.dataset.platformurl.urlType == 1 ){
-
+      console.log()
+      if( e.currentTarget.dataset.platformurl.platformUrl ){
+        let arr = e.currentTarget.dataset.platformurl.platformUrl.split('?')
+        this.setData({
+          urlArr: arr
+        })
+      }
+      console.log(this.data.urlArr,'this.data.urlArr')
+      wx.navigateTo({
+        url: '/pages/h5index/index',
+        success:  (res) => {
+          // 通过eventChannel像跳转的页面传参数
+          res.eventChannel.emit('jumpRevoke', {
+              id: this.data.urlArr[1],
+              url: this.data.urlArr[0]
+          })
+      }
+      })
     }else if( e.currentTarget.dataset.platformurl.urlType == 2 ){
-      let urls = 'https://huahua.bj.cn/webapi/' + e.currentTarget.dataset.platformurl.platformImage
+      let urls = 'https://huahua.bj.cn/webapi/' + e.currentTarget.dataset.platformurl.platformUrl
       wx.navigateTo({
         url: '/pages/indexImageUrl/index?url='+urls
       })
     }else if( e.currentTarget.dataset.platformurl.urlType == 3 ){
+      wx.navigateToMiniProgram({
+        appId: 'wx83f3046fd293eefa',  //appid
+        path: '/pages/index/index',//path
+        extraData: {  //参数
+          foo: 'bar'
+        },
+        envVersion: 'release', //开发版develop 开发版 trial   体验版 release 正式版 
+        success(res) {
+          console.log('成功')
+          // 打开成功
+        }
+      })
 
     }else if( e.currentTarget.dataset.platformurl.urlType == 4 ){
 
