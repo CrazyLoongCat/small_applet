@@ -49,14 +49,7 @@
           </radio>
           <view class="bianjiz" wx:if='{{isShowW}}'>
             <view class="itemView">
-              <label class="info">收款人姓名：</label>
-              <input class="input"  
-              value="{{weixinInfo.userName}}" bindinput="weixinUser" />
-            </view>
-            <view class="itemView">
-              <label class="info">微信号：</label>
-              <input class="input"  
-              value="{{weixinInfo.account}}" bindinput="weixinAccount"/>
+              选此方式提现，请确认您已事先添加客服微信！
             </view>
             <!-- <view class="itemView">
               <label class="info">身份证：</label>
