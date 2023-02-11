@@ -19,7 +19,7 @@ Page({
       {id: 0,name: '查看订单', url: '/pages/order/orderList/index',img: '../../img/26.jpg' },
       {id: 1,name: '新手教程', url: '/pages/newCusterCourse/index',img: '../../img/25.jpg' },
       {id: 2,name: '提现记录', url: '/pages/balanceHistory/index',img: '../../img/23.jpg' },
-      {id: 3,name: '联系客服', url: '/pages/custerServer/index',img: '../../img/21.jpg' },
+      {id: 3,name: '联系客服', url: '',img: '../../img/21.jpg' },
       {id: 4,name: '分销中心', url: '/pages/custerServer/index',img: '../../img/24.jpg' },
       {id: 5,name: '我的订单', url: '/pages/order/submitList/index',img: '../../img/22.jpg' },
     ]

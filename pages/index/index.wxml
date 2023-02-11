@@ -63,7 +63,7 @@
   </view>
   <swiper class='swiper-box fl' vertical="true" autoplay="true" interval="4000" duration="500" circular="true">
     <block wx:for="{{tips}}" wx:key="index">
-      <swiper-item>
+      <swiper-item class="messageTip">
         {{item.tipMessage}} </swiper-item>
     </block>
   </swiper>
@@ -81,10 +81,10 @@
           <block >
             <image src="{{'https://huahua.bj.cn/webapi' +  item.platformImage}}" mode="" />
           </block>
-          <view>
+          <view data-item="{{item}}" catchtap="platformNameClick">
             {{item.platformName}}
           </view>
-          <view class="twoView">
+          <view  class="twoView">
             {{item.smallShow}}
           </view>
           <view class="treeView">

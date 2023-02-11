@@ -39,13 +39,15 @@
 }
 
 .swiper-box {
-  height: 90rpx;
-  line-height: 90rpx;
+  height: 150rpx;
+  line-height: 50rpx;
   width: 80%;
   background-color: fff;
   font-size: 32rpx;
 }
-
+ .messageTip{
+  height: 100% !important
+}
 .footerTitle {
   font-size: 36rpx;
   margin: 10rpx 0 30rpx 16rpx;

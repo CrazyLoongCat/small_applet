@@ -42,44 +42,9 @@
     <navigator url="{{item.url}}" class='home_grid'>
      <image src="{{item.img}}" class="home_icon"></image>
      <view class="home_grid_text">{{item.name}}</view>
+     <button class="contrat" wx:if="{{item.id == 3}}" open-type="contact">
+     </button>
     </navigator>
    </block>
   </view>
-
-  <!-- <van-cell value="查看" icon="shop-o" is-link url="/pages/order/orderList/index">
-    <view slot="title">
-      <view class="van-cell-text">查看订单</view>
-    </view>
-  </van-cell>
-  <van-cell value="查看" icon="shop-o" is-link url="/pages/order/cash/index">
-    <view slot="title">
-      <view class="van-cell-text">余额明细</view>
-    </view>
-  </van-cell>
-  <van-cell value="查看" icon="shop-o" is-link url='/pages/newCusterCourse/index'>
-    <view slot="title">
-      <view class="van-cell-text">新手教程</view>
-    </view>
-  </van-cell>
-  <van-cell value="查看" icon="shop-o" is-link url='/pages/balanceHistory/index'>
-    <view slot="title">
-      <view class="van-cell-text">提现记录</view>
-    </view>
-  </van-cell>
-  <van-cell value="查看" icon="shop-o" is-link url="/pages/custerServer/index">
-    <view slot="title">
-      <view class="van-cell-text">联系客服</view>
-    </view>
-  </van-cell>
-  <van-cell value="查看" icon="shop-o" is-link>
-    <view slot="title">
-      <view class="van-cell-text">分销中心</view>
-    </view>
-  </van-cell>
-  <van-cell value="查看" icon="shop-o" is-link   url="/pages/order/submitList/index">
-    <view slot="title">
-      <view class="van-cell-text">我的订单</view>
-    </view>
-  </van-cell> -->
-
 </view>
