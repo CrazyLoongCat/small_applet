@@ -99,23 +99,48 @@ next_calculator(){
   platformsItemClick(e) {
     
     if( e.currentTarget.dataset.platformurl.urlType == 1 ){
-      console.log()
-      if( e.currentTarget.dataset.platformurl.platformUrl ){
-        let arr = e.currentTarget.dataset.platformurl.platformUrl.split('?')
-        this.setData({
-          urlArr: arr
-        })
-      }
-      console.log(this.data.urlArr,'this.data.urlArr')
-      wx.navigateTo({
-        url: '/pages/h5index/index',
-        success:  (res) => {
-          // 通过eventChannel像跳转的页面传参数
-          res.eventChannel.emit('jumpRevoke', {
-              id: this.data.urlArr[1],
-              url: this.data.urlArr[0]
-          })
-      }
+      // console.log()
+      // if( e.currentTarget.dataset.platformurl.platformUrl ){
+      //   let arr = e.currentTarget.dataset.platformurl.platformUrl.split('?')
+      //   this.setData({
+      //     urlArr: arr
+      //   })
+      // }
+      // console.log(this.data.urlArr,'this.data.urlArr')
+      // wx.navigateTo({
+      //   url: '/pages/h5index/index',
+      //   success:  (res) => {
+      //     // 通过eventChannel像跳转的页面传参数
+      //     res.eventChannel.emit('jumpRevoke', {
+      //         id: this.data.urlArr[1],
+      //         url: this.data.urlArr[0]
+      //     })
+      //    }
+      // })
+      wx.showModal({
+        title: '',
+        content: '复制链接去购物',
+        success(res) {
+          if (res.confirm) {
+            wx.setClipboardData({ //复制文本
+              data: e.currentTarget.dataset.platformurl.platformUrl,
+              success: function (res) {
+                wx.getClipboardData({ //获取复制文本
+                  success: function (res) {
+                    console.log(res)
+                    wx.showToast({
+                      title: '复制成功',
+                      icon: "none", //是否需要icon
+                      mask: "ture" //是否设置点击蒙版，防止点击穿透
+                    })
+                  }
+                })
+              }
+            })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
       })
     }else if( e.currentTarget.dataset.platformurl.urlType == 2 ){
       let urls = 'https://huahua.bj.cn/webapi/' + e.currentTarget.dataset.platformurl.platformUrl

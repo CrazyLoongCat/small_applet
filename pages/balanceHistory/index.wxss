@@ -1,6 +1,11 @@
 
 page {
-  background-color: rgb(18, 23, 61);
   padding-top: 20rpx;
-  
 }
+.tables {
+  margin-top: 30rpx;
+  color: #fff;
+  width: 95%;
+  margin: 0 auto;
+}
+

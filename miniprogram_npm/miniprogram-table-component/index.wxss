@@ -29,6 +29,7 @@
 }
 .thead-border .td {
   border-right: 1rpx solid #ebeef5;
+  color: black
 }
 .thead-border .td:last-child {
   border-right: none;

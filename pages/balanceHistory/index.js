@@ -10,19 +10,14 @@ Page({
   data: {
     tableHeader: [
       {
-        prop: 'rebateSuccessTime',
-        width: 160,
-        label: '提现日期',
-      },
-      {
-        prop: 'rebateSum',
-        width: 60,
-        label: '金额'
-      },
-      {
         prop: 'payPlatformAccount',
         width: 180,
         label: '账号'
+      },
+      {
+        prop: 'rebateSum',
+        width: 150,
+        label: '金额'
       },
       {
         prop: 'rebateStatusName',
@@ -30,10 +25,10 @@ Page({
         label: '状态'
       },
       {
-        prop: 'refuseReason',
-        width: 120,
-        label: '拒绝原因'
-      }
+        prop: 'rebateSuccessTime',
+        width: 200,
+        label: '提现日期',
+      },
     ],
     stripe: false,
     border: true,
