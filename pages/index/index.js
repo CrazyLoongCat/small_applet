@@ -99,23 +99,48 @@ next_calculator(){
 //点击跳转
   platformsItemClick(e) {
     if( e.currentTarget.dataset.platformurl.urlType == 1 ){
-      console.log()
-      if( e.currentTarget.dataset.platformurl.platformUrl ){
-        let arr = e.currentTarget.dataset.platformurl.platformUrl.split('?')
-        this.setData({
-          urlArr: arr
-        })
-      }
-      console.log(this.data.urlArr,'this.data.urlArr')
-      wx.navigateTo({
-        url: '/pages/h5index/index',
-        success:  (res) => {
-          // 通过eventChannel像跳转的页面传参数
-          res.eventChannel.emit('jumpRevoke', {
-              id: this.data.urlArr[1],
-              url: this.data.urlArr[0]
-          })
-      }
+      // console.log()
+      // if( e.currentTarget.dataset.platformurl.platformUrl ){
+      //   let arr = e.currentTarget.dataset.platformurl.platformUrl.split('?')
+      //   this.setData({
+      //     urlArr: arr
+      //   })
+      // }
+      // console.log(this.data.urlArr,'this.data.urlArr')
+      // wx.navigateTo({
+      //   url: '/pages/h5index/index',
+      //   success:  (res) => {
+      //     // 通过eventChannel像跳转的页面传参数
+      //     res.eventChannel.emit('jumpRevoke', {
+      //         id: this.data.urlArr[1],
+      //         url: this.data.urlArr[0]
+      //     })
+      //    }
+      // })
+      wx.showModal({
+        title: '',
+        content: '复制链接去购物',
+        success(res) {
+          if (res.confirm) {
+            wx.setClipboardData({ //复制文本
+              data: e.currentTarget.dataset.platformurl.platformUrl,
+              success: function (res) {
+                wx.getClipboardData({ //获取复制文本
+                  success: function (res) {
+                    console.log(res)
+                    wx.showToast({
+                      title: '复制成功',
+                      icon: "none", //是否需要icon
+                      mask: "ture" //是否设置点击蒙版，防止点击穿透
+                    })
+                  }
+                })
+              }
+            })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
       })
     }else if( e.currentTarget.dataset.platformurl.urlType == 2 ){
       let urls = 'https://huahua.bj.cn/webapi/' + e.currentTarget.dataset.platformurl.platformUrl
@@ -124,10 +149,9 @@ next_calculator(){
       })
     }else if( e.currentTarget.dataset.platformurl.urlType == 3 ){
       wx.navigateToMiniProgram({
-        appId: 'wx83f3046fd293eefa',  //appid
-        path: 'pages/publicPages/goodDetails/index?goodsId=01C016826&shareUrl=77C4C9FAAE3180A057B55B17637EE1CF061BD476D41457E3',//path
+        appId: e.currentTarget.dataset.platformurl.smallAppId,  //appid
+        path: e.currentTarget.dataset.platformurl.platformUrl,//path
         extraData: {  //参数
-          staffId: '2164'
         },
         envVersion: 'release', //开发版develop 开发版 trial   体验版 release 正式版 
         success(res) {

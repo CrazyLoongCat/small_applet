@@ -142,14 +142,14 @@ Page({
     //申请提现按钮
    async applyBalance(){
       console.log(this.data.changeValue,'this.data.balance')
-      // if( this.data.balance < 20 ){
-      //   wx.showToast({
-      //     title: '可提现金额小于20元，不可提现',
-      //     icon: 'none',
-      //     duration: 2000//持续的时间
-      //   })
-      //   return
-      // }
+      if( this.data.balance < 15 ){
+         wx.showToast({
+           title: '可提现金额小于15元，不可提现',
+           icon: 'none',
+           duration: 2000//持续的时间
+         })
+        return
+      }
       console.log(this.data.zhifubaoInfo,'this.data.zhifubaoInfo')
       if( this.data.changeValue == 'weixin' ){
          if( !this.data.weixinInfo.userName ||  !this.data.weixinInfo.account ){
