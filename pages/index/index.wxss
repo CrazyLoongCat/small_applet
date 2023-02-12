@@ -81,4 +81,5 @@
   text-align: center;
   color: red;
   background-color: #FECB60;
+  margin-bottom: 30rpx;
 }

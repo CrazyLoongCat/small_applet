@@ -25,7 +25,8 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "花繁以墨",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh":true
   },
   "tabBar": {
     "backgroundColor": "#ffffff",
@@ -38,6 +39,12 @@
         "iconPath": "img/fanli3.png",
         "selectedIconPath": "img/fanli_2.png",
         "text": "首页"
+      },
+      {
+        "pagePath": "pages/orderSearchList/index",
+        "iconPath": "img/9.jpg",
+        "selectedIconPath": "img/9.jpg",
+        "text": "中免日上"
       },
       {
         "pagePath": "pages/myPage/index",

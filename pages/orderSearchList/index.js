@@ -10,7 +10,8 @@ Page({
   data: {
     name: '',
     orderdata: [],
-    inputData: ''
+    inputData: '',
+    pagenum: 1
   },
 
   /**
@@ -26,36 +27,26 @@ Page({
 
   // 查询订单
   async getOrderList() {
-    let res
-    if( this.data.name == 'GDF海控' ){
-      res = await request({
-        method: "post",
-        url: "/webapi/cloud/league/sku/list",
-        data: {
-            page_index: 1,
-            page_size: 20,
-            keyword: this.data.inputData,
-            external_store_id: "gdf_6",
-            sort_name: "4",
-            sort: 1
-        }
-      });
-    }else if( this.data.name == '中免日上' ){
-        res = await request({
-        method: "post",
-        url: "/webapi/cloud/league/sku/list",
-        data: {
-            page_index: 1,
-            page_size: 20,
-            external_store_id: "gdf_6",
-            sort_name: "4",
-            sort: 1
-        }
-      });
+    let res = await request({
+      method: "post",
+      url: "/webapi/cloud/league/sku/list",
+      data: {
+          page_index: this.data.pagenum,
+          page_size: 20,
+          keyword: this.data.inputData,
+          external_store_id: this.data.name,
+          sort_name: "3",
+          sort: 1
+      }
+    });
+    if( res.code == 0 ){
+      var arr1 = this.data.orderdata; //从data获取当前datalist数组
+      var arr2 = res.data.data; //从此次请求返回的数据中获取新数组
+      arr1 = arr1.concat(arr2); //合并数组
+      this.setData({
+        orderdata: arr1 //合并后更新datalist
+      })
     }
-    this.setData({
-      orderdata: res.data.data
-    })
     console.log(res,this.data.name,'this.data.name')
   },
   shareBtnother(e){
@@ -83,9 +74,6 @@ Page({
     // console.log(this.data.inputData,'55555555555')
   },
    
-onPullDownRefresh() {
-  
-},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -118,14 +106,21 @@ onPullDownRefresh() {
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-
+   
+    
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-
+    var that= this;
+    var pagenum = that.data.pagenum + 1; //获取当前页数并+1
+    that.setData({
+      pagenum: pagenum, //更新当前页数
+    })
+    that.getOrderList();//重新调用请求获取下一页数据
+    
   },
 
   /**

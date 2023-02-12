@@ -184,15 +184,16 @@ next_calculator(){
       })
 
     }else if( e.currentTarget.dataset.platformurl.urlType == 4 ){
-
+      wx.navigateTo({
+        url: e.currentTarget.dataset.platformurl.platformUrl,
+        // '/pages/orderSearchList/index?name='+ e.currentTarget.dataset.item.platformName
+      })
     }
   },
   //点击名称跳转GDF
   //点击名称跳转中免日上
    async platformNameClick(e){
-      wx.navigateTo({
-        url: '/pages/orderSearchList/index?name='+ e.currentTarget.dataset.item.platformName
-      })
+      
   },
 
   /**
