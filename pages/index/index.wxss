@@ -26,7 +26,9 @@
   border-radius: 50%;
 
 }
-
+.swiperBigBox{
+  background-color: #ccc;
+}
 .swiper-left {
   height: 90rpx;
   line-height: 90rpx;
@@ -36,17 +38,15 @@
 
 .box {
   margin: 20rpx 0;
+  background-color: #fff;
 }
 
 .swiper-box {
-  height: 150rpx;
-  line-height: 50rpx;
+ height: 90rpx;
+  line-height: 90rpx;
   width: 80%;
-  background-color: fff;
+  
   font-size: 32rpx;
-}
- .messageTip{
-  height: 100% !important
 }
 .footerTitle {
   font-size: 36rpx;

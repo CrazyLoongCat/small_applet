@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tips: [],
+    tips1: [],
+    tips2: [],
     platformsList: [],
     bannerList: [],
     urlArr: []
@@ -44,11 +45,27 @@ Page({
         codeName: "checkStatus"
       }
     });
-
-    this.setData({
-      tips: res.data.records
-    })
-
+    if( res.code == 0 ){
+      if( res.data.records.length > 0 ){
+        let result = [] , num = 2 ; 
+        for(let i = 0,len = res.data.records.length;i<len;i+=num){
+            result.push(res.data.records.slice(i,i+num));
+        }
+        console.log(result)
+        if( result.length > 0 ){
+           if( result[0].length > 0 ){
+              this.setData({
+                tips1: result[0]
+              })
+           }
+           if( result[1].length > 0 ){
+              this.setData({
+                tips2: result[1]
+              })
+           }
+        }
+      }
+    }
   },
   // 查询平台
   async getPlatformsFn() {

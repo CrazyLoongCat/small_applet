@@ -2,10 +2,10 @@
   <view  class='searchBox'>
     <view class='search'>
       <icon type="search" size="20" class='icon_search'></icon>
-      <input type='text' placeholder='请输入您搜索的商品' placeholder-class="center" class="inputS" confirm-type='search'    bindfocus="focusHandler">
+      <input type='text'  placeholder='请输入您搜索的商品' placeholder-class="center" class="inputS" confirm-type='search'    bindinput="focusHandler">
       </input>
     </view>
-    <view class="sousuo">
+    <view class="sousuo" bindtap="sousuoData">
       搜索
     </view>
   </view>
@@ -19,7 +19,7 @@
      <view class="home_name1">返利:{{item.third_promotion_info.commission_rate}}%</view>
      <view class="shares">
        <button class="sharesleft" open-type="share">
-         <image src="../../img/21.jpg" class="sharesicon" mode=""/>
+         <image src="../../img/share1.jpg" class="sharesicon" mode=""/>
          赚返利
        </button>
        <view data-item="{{item}}" class="sharesright" bindtap="shareBtnother">

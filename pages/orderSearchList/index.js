@@ -10,6 +10,7 @@ Page({
   data: {
     name: '',
     orderdata: [],
+    inputData: ''
   },
 
   /**
@@ -33,6 +34,7 @@ Page({
         data: {
             page_index: 1,
             page_size: 20,
+            keyword: this.data.inputData,
             external_store_id: "gdf_6",
             sort_name: "4",
             sort: 1
@@ -71,7 +73,15 @@ Page({
       }
     })
   },
-
+  sousuoData(){
+     this.getOrderList()
+  },
+  focusHandler(e){
+    this.setData({
+      inputData: e.detail.value
+    })
+    // console.log(this.data.inputData,'55555555555')
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

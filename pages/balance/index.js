@@ -150,7 +150,7 @@ Page({
          })
         return
       }
-      console.log(this.data.zhifubaoInfo,'this.data.zhifubaoInfo')
+      // console.log(this.data.zhifubaoInfo,'this.data.zhifubaoInfo')
       // if( this.data.changeValue == 'weixin' ){
       //    if( !this.data.weixinInfo.userName ||  !this.data.weixinInfo.account ){
       //     wx.showToast({

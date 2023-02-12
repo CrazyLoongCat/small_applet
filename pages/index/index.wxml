@@ -56,17 +56,31 @@
     </view>
   </view>
 </view>
-<view class="clearfloat box">
-  <view class="fl swiper-left">
-    <!-- <van-icon name="bell"  style="color: ;font-size:18px;"/> -->
-    <van-icon name="volume-o" style="color:red;font-size:18px;" />
+<view class="swiperBigBox">
+  <view class="clearfloat box">
+    <view class="fl swiper-left">
+      <!-- <van-icon name="bell"  style="color: ;font-size:18px;"/> -->
+      <van-icon name="volume-o" style="color:red;font-size:18px;" />
+    </view>
+    <swiper class='swiper-box fl' vertical="true" autoplay="true" interval="4000" duration="500" circular="true">
+      <block wx:for="{{tips1}}" wx:key="index">
+        <swiper-item>
+          {{item.tipMessage}} </swiper-item>
+      </block>
+    </swiper>
   </view>
-  <swiper class='swiper-box fl' vertical="true" autoplay="true" interval="4000" duration="500" circular="true">
-    <block wx:for="{{tips}}" wx:key="index">
-      <swiper-item class="messageTip">
-        {{item.tipMessage}} </swiper-item>
-    </block>
-  </swiper>
+  <view class="clearfloat box">
+    <view class="fl swiper-left">
+      <!-- <van-icon name="bell"  style="color: ;font-size:18px;"/> -->
+      <van-icon name="volume-o" style="color:red;font-size:18px;" />
+    </view>
+    <swiper class='swiper-box fl' vertical="true" autoplay="true" interval="4000" duration="500" circular="true">
+      <block wx:for="{{tips2}}" wx:key="index">
+        <swiper-item>
+          {{item.tipMessage}} </swiper-item>
+      </block>
+    </swiper>
+  </view>
 </view>
 
 <view class="footer ">
