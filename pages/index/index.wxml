@@ -95,7 +95,7 @@
           <block >
             <image src="{{ baseUrl + '/webapi' +  item.platformImage}}" mode="" />
           </block>
-          <view data-item="{{item}}" catchtap="platformNameClick">
+          <view  >
             {{item.platformName}}
           </view>
           <view  class="twoView">

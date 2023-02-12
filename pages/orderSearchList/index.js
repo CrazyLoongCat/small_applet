@@ -82,6 +82,10 @@ Page({
     })
     // console.log(this.data.inputData,'55555555555')
   },
+   
+onPullDownRefresh() {
+  
+},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
