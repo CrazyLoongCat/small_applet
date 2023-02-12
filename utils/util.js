@@ -47,11 +47,11 @@ function request({
             })
           }
         }
-        // else if( code == '1023' ){
-        //   wx.navigateTo({
-        //     url: '/pages/loginButtonIndex/index'
-        //   })
-        // }
+        else if( code == '1023' ){
+          wx.navigateTo({
+            url: '/pages/loginButtonIndex/index'
+          })
+        }
         else {
           resolve(res.data);
         }
