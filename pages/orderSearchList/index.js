@@ -34,7 +34,7 @@ Page({
           page_index: this.data.pagenum,
           page_size: 20,
           keyword: this.data.inputData,
-          external_store_id: this.data.name,
+          external_store_id: this.data.name!=null?this.data.name:"cdf10000011",
           sort_name: "3",
           sort: 1
       }

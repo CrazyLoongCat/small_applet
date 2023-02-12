@@ -15,7 +15,7 @@
      <image data-item="{{item}}" src="{{item.media_info.primary_imgs.img_url}}" bindtap="shareBtnother" class="home_icon"></image>
      <view class="brand_word">{{item.brand_info.brand_word}}</view>
      <view class="brand_words">{{item.sku_name_chinese}}</view>
-     <view class="home_name">原价: ¥{{item.third_promotion_info.commission_amount}}</view>
+     <view class="home_name">原价: ¥{{item.buy_price}}</view>
      <view class="home_name1">返利:{{item.third_promotion_info.commission_rate}}%</view>
      <view class="shares">
        <button class="sharesleft" open-type="share">
