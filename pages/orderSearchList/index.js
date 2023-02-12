@@ -26,33 +26,18 @@ Page({
 
   // 查询订单
   async getOrderList() {
-    let res
-    if( this.data.name == 'GDF海控' ){
-      res = await request({
-        method: "post",
-        url: "/webapi/cloud/league/sku/list",
-        data: {
-            page_index: 1,
-            page_size: 20,
-            keyword: this.data.inputData,
-            external_store_id: "gdf_6",
-            sort_name: "4",
-            sort: 1
-        }
-      });
-    }else if( this.data.name == '中免日上' ){
-        res = await request({
-        method: "post",
-        url: "/webapi/cloud/league/sku/list",
-        data: {
-            page_index: 1,
-            page_size: 20,
-            external_store_id: "gdf_6",
-            sort_name: "4",
-            sort: 1
-        }
-      });
-    }
+    let res = await request({
+      method: "post",
+      url: "/webapi/cloud/league/sku/list",
+      data: {
+          page_index: 1,
+          page_size: 20,
+          keyword: this.data.inputData,
+          external_store_id: this.data.name,
+          sort_name: "3",
+          sort: 1
+      }
+    });
     this.setData({
       orderdata: res.data.data
     })
