@@ -18,9 +18,9 @@
         <radio-group class="balanceType" bindchange="bindchange">
           <radio value="zhifubao"  class="zhifubao">
             <label for="apple" >支付宝</label>
-            <!-- <span class="bianji" catchtap='bianJiZfb'>编辑</span> -->
+         
           </radio>
-          <view class="bianjiz" wx:if='{{isShowZ}}'>
+          <!-- <view class="bianjiz" wx:if='{{isShowZ}}'>
             <view class="itemView">
               <label class="info">收款人姓名：</label>
               <input class="input"  
@@ -31,38 +31,29 @@
               <input class="input"  
               value="{{zhifubaoInfo.account}}" bindinput="zhifubaoAccount"/>
             </view>
-            <!-- <view class="itemView">
-              <label class="info">身份证：</label>
-              <input class="input" 
-              bindinput="passWdInput" />
-            </view> -->
+         
             <view class="tip">
               接有关部门通知，打款需核验收款人信息，请勿担心，我司不会留存该信息
             </view>
             <view class="queren" catchtap='querenZfb'>
               确认
             </view>
-          </view>
+          </view> -->
           <radio value="weixin" checked="true" class="weixin">
             <label for="pear">微信</label>
-            <!-- <span class="bianji" catchtap='bianJiWx'>编辑</span> -->
           </radio>
-          <view class="bianjiz" wx:if='{{isShowW}}'>
+          <!-- <view class="bianjiz" wx:if='{{isShowW}}'>
             <view class="itemView">
               选此方式提现，请确认您已事先添加客服微信！
             </view>
-            <!-- <view class="itemView">
-              <label class="info">身份证：</label>
-              <input class="input" 
-              bindinput="passWdInput" />
-            </view> -->
+          
             <view class="tip">
               接有关部门通知，打款需核验收款人信息，请勿担心，我司不会留存该信息
             </view>
             <view class="queren" catchtap='querenWx'>
               确认
             </view>
-          </view>
+          </view> -->
         </radio-group>
       </view>
       <button class="tixianBtn" bindtap="applyBalance">申请提现</button>

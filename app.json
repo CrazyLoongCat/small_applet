@@ -11,7 +11,10 @@
     "pages/custerServer/index", 
     "pages/newCusterCourse/index",
     "pages/indexImageUrl/index",
-    "pages/h5index/index"
+    "pages/h5index/index",
+    "pages/orderSearchList/index",
+    "pages/loginButtonIndex/index"
+    
   ],
   
     "usingComponents": {

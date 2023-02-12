@@ -46,7 +46,13 @@ function request({
               }))
             })
           }
-        } else {
+        }
+        // else if( code == '1023' ){
+        //   wx.navigateTo({
+        //     url: '/pages/loginButtonIndex/index'
+        //   })
+        // }
+        else {
           resolve(res.data);
         }
       },
@@ -60,6 +66,7 @@ function request({
     })
   })
 }
+
 // 刷新token
 function updateToken() {
   // 登录
@@ -90,6 +97,7 @@ function updateToken() {
     }
   })
 }
+
 module.exports.baseUrl=baseUrl
 module.exports = {
   baseUrl,

@@ -1,0 +1,33 @@
+<view class="orderPage">
+  <view  class='searchBox'>
+    <view class='search'>
+      <icon type="search" size="20" class='icon_search'></icon>
+      <input type='text' placeholder='请输入您搜索的商品' placeholder-class="center" class="inputS" confirm-type='search'    bindfocus="focusHandler">
+      </input>
+    </view>
+    <view class="sousuo">
+      搜索
+    </view>
+  </view>
+  <view class="home_grids">
+   <block wx:for="{{orderdata}}" wx:key="id">
+    <view  class='home_grid'>
+     <image data-item="{{item}}" src="{{item.media_info.primary_imgs.img_url}}" bindtap="shareBtnother" class="home_icon"></image>
+     <view class="brand_word">{{item.brand_info.brand_word}}</view>
+     <view class="brand_words">{{item.sku_name_chinese}}</view>
+     <view class="home_name">原价: ¥{{item.third_promotion_info.commission_amount}}</view>
+     <view class="home_name1">返利:{{item.third_promotion_info.commission_rate}}%</view>
+     <view class="shares">
+       <button class="sharesleft" open-type="share">
+         <image src="../../img/21.jpg" class="sharesicon" mode=""/>
+         赚返利
+       </button>
+       <view data-item="{{item}}" class="sharesright" bindtap="shareBtnother">
+         去购物拿返现
+       </view>
+     </view>
+    </view>
+   </block>
+  </view>
+
+</view>

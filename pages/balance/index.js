@@ -91,7 +91,7 @@ Page({
       }
     });
     this.setData({
-      balance: res.data
+      balance: res.data ? res.data : '0'
     })
   },
     // 查询用户最新一次支付信息
@@ -151,25 +151,25 @@ Page({
         return
       }
       console.log(this.data.zhifubaoInfo,'this.data.zhifubaoInfo')
-      if( this.data.changeValue == 'weixin' ){
-         if( !this.data.weixinInfo.userName ||  !this.data.weixinInfo.account ){
-          wx.showToast({
-            title: '请输入微信提现信息',
-            icon: 'none',
-            duration: 2000//持续的时间
-          })
-          return
-         }
-      }else if( this.data.changeValue == 'zhifubao' ){
-        if( !this.data.zhifubaoInfo.userName ||  !this.data.zhifubaoInfo.account ){
-          wx.showToast({
-            title: '请输入支付宝提现信息',
-            icon: 'none',
-            duration: 2000//持续的时间
-          })
-          return
-         }
-      }
+      // if( this.data.changeValue == 'weixin' ){
+      //    if( !this.data.weixinInfo.userName ||  !this.data.weixinInfo.account ){
+      //     wx.showToast({
+      //       title: '请输入微信提现信息',
+      //       icon: 'none',
+      //       duration: 2000//持续的时间
+      //     })
+      //     return
+      //    }
+      // }else if( this.data.changeValue == 'zhifubao' ){
+      //   if( !this.data.zhifubaoInfo.userName ||  !this.data.zhifubaoInfo.account ){
+      //     wx.showToast({
+      //       title: '请输入支付宝提现信息',
+      //       icon: 'none',
+      //       duration: 2000//持续的时间
+      //     })
+      //     return
+      //    }
+      // }
       const res = await request({
         method: "POST",
         url: "/webapi/ap/user/rebateRecord/applyRebate",

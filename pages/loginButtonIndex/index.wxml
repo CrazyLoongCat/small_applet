@@ -1,0 +1,17 @@
+<view class="page">
+  <view class="top">
+    <image class="indexIcon" src="../../img/icon.jpg" mode=""/>
+    花生米致富
+  </view>
+  <view class="shouquan">
+    您尚未授权
+  </view>
+  <view class="shouquan">
+    需要获取您的授权后才能进行操作
+  </view>
+  <view class="buttonList">
+    <button class="butNo" bindtap="butNo">暂不授权</button>
+    <button class="butYes" bindtap="butYes">立即授权</button>
+  </view>
+
+</view>

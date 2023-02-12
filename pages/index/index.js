@@ -165,46 +165,11 @@ next_calculator(){
     }
   },
   //点击名称跳转GDF
-  async platformNameClick(e){
-    console.log(e,'888888888')
-    const res = await request({
-      method: "post",
-      url: "/webapi/ap/cloud/league/sku/list",
-      data: {
-          page_index: 1,
-          page_size: 5,
-          external_store_id: "gdf_6",
-          sort_name: "4",
-          sort: 1
-      }
-    });
-
-    var data = res.data.records;
-
-    this.setData({
-      platformsList: data
-    })
-  },
-   //点击名称跳转中免日上
-   async platformNameClick1(e){
-    console.log(e,'888888888')
-    const res = await request({
-      method: "post",
-      url: "/webapi/ap/cloud/league/sku/list",
-      data: {
-          page_index: 1,
-          page_size: 5,
-          external_store_id: "gdf_6",
-          sort_name: "4",
-          sort: 1
-      }
-    });
-
-    var data = res.data.records;
-
-    this.setData({
-      platformsList: data
-    })
+  //点击名称跳转中免日上
+   async platformNameClick(e){
+      wx.navigateTo({
+        url: '/pages/orderSearchList/index?name='+ e.currentTarget.dataset.item.platformName
+      })
   },
 
   /**

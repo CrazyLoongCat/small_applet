@@ -22,6 +22,7 @@ App({
       // 登录
       wx.login({
         success: res => {
+          console.log(res.code,'res.coderes.code')
           wx.request({
             url: baseUrl + "/webapi/ap/system/login",
             data: {
@@ -49,7 +50,6 @@ App({
         }
       })
     }
-
   },
   globalData: {
     testData: null
