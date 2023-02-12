@@ -93,7 +93,7 @@
       <view class="grid " data-platformUrl="{{item}}" bindtap="platformsItemClick">
         <view class="gridItem">
           <block >
-            <image src="{{'https://huahua.bj.cn/webapi' +  item.platformImage}}" mode="" />
+            <image src="{{ baseUrl + '/webapi' +  item.platformImage}}" mode="" />
           </block>
           <view data-item="{{item}}" catchtap="platformNameClick">
             {{item.platformName}}

@@ -9,12 +9,17 @@ Page({
    */
   data: {
     imageUrl: '',
+    baseUrl: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    var app = getApp()
+    this.setData({
+      baseUrl: app.globalData.globalBaseUrl
+    })
      this.getBalanceHistory()
   },
 
@@ -27,7 +32,7 @@ Page({
       }
     });
     if( res.code == 0 ){
-      let url = 'https://huahua.bj.cn/webapi' + res.data[0].codeValue
+      let url = this.data.baseUrl + '/webapi' + res.data[0].codeValue
       this.setData({
         'imageUrl': url
       })

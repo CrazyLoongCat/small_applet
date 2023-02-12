@@ -12,13 +12,18 @@ Page({
     tips2: [],
     platformsList: [],
     bannerList: [],
-    urlArr: []
+    urlArr: [],
+    baseUrl: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    var app = getApp()
+    this.setData({
+      baseUrl: app.globalData.globalBaseUrl
+    })
     if (app.globalData.testData && app.globalData.testData != '') {
       /**
        * 调用首页接口
@@ -97,7 +102,7 @@ Page({
         if( res.data.length > 0 ){
           res.data.forEach( item => {
             data.push({
-              imgurl: 'https://huahua.bj.cn/webapi' + item.codeValue
+              imgurl: this.data.baseUrl + '/webapi/' + item.codeValue
             })
           })
         }
@@ -160,7 +165,8 @@ next_calculator(){
         }
       })
     }else if( e.currentTarget.dataset.platformurl.urlType == 2 ){
-      let urls = 'https://huahua.bj.cn/webapi/' + e.currentTarget.dataset.platformurl.platformUrl
+
+      let urls = this.data.baseUrl + '/webapi/' + e.currentTarget.dataset.platformurl.platformUrl
       wx.navigateTo({
         url: '/pages/indexImageUrl/index?url='+urls
       })

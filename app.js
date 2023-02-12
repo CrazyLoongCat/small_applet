@@ -3,7 +3,6 @@ const {
 } = require('./utils/util.js'); 
 App({
   onLaunch() {
-
     // // 展示本地存储能力
     const token = wx.getStorageSync('token')
     var that = this;
@@ -52,6 +51,7 @@ App({
     }
   },
   globalData: {
-    testData: null
+    testData: null,
+    globalBaseUrl: baseUrl
   }
 })

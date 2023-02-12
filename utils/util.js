@@ -1,7 +1,21 @@
 let isRefreshing = true; // 请求锁
 let pendings = []; // 请求列表
 const pathArr = ['pages/buy-goods/index']; // 不需要登录的路径 
- const baseUrl = "https://huahua.bj.cn"; // 基础路径
+ var baseUrl = null; // 基础路径
+
+const { miniProgram: { envVersion } } = wx.getAccountInfoSync();
+console.log(envVersion,'8888888888888888')
+switch (envVersion) {
+    case "develop": // 开发版
+        //  baseUrl = "https://huahua.bj.cn";
+        baseUrl = "http://82.156.242.246:60001";
+        break;
+ 
+    default:    // 正式版
+          //  baseUrl = "http://82.156.242.246:60001";
+        baseUrl = "https://huahua.bj.cn";
+        break;
+}
 function request({
   method,
   url,
