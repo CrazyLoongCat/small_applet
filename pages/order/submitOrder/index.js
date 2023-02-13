@@ -47,6 +47,7 @@
        orderTypeIndex: e.detail.value,
        AntiMoney: this.data.money == "" ? "" : this.data.orderTypeList[e.detail.value].rebateRate * this.data.money / 100
      })
+     console.log(this.data.orderTypeIndex,'orderTypeIndexorderTypeIndex')
    },
    // 金额
    moneyInput: function (e) {
@@ -69,6 +70,19 @@
    },
    //提交订单
    submitOrder: function () {
+     if( this.data.orderTypeIndex == 3 ){
+       let strs = this.data.orderId.substr(0,3) 
+       console.log(strs,'strsstrs')
+        if( strs != 'BAP' ){
+            wx.showToast({
+              title: '订单需BAP开头',
+              icon: 'error',
+              duration: 2000
+            })
+            return
+        }
+     }
+     console.log('44444')
      var that = this;
      if (this.data.orderId.trim() == "") {
        wx.showToast({
