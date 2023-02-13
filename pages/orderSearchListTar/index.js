@@ -20,22 +20,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.setData({
-      name: options.name
-    })
-    console.log(this.data.name,'optionsoptions')
      this.getOrderList()
   },
 
   // 查询订单
   async getOrderList() {
-    let storeId = ''
-    if( this.data.name == '中免日上' ){
-      storeId = 'cdf10000011'
-    }else if( this.data.name == 'GDF海控' ){
-      storeId = 'gdf_6'
-    }
-    console.log(storeId,'optionsoptions')
     let res = await request({
       method: "post",
       url: "/webapi/cloud/league/sku/list",
@@ -43,7 +32,7 @@ Page({
           page_index: this.data.pagenum,
           page_size: 20,
           keyword: this.data.inputData,
-          external_store_id: storeId,
+          external_store_id: 'cdf10000011',
           sort_name: "3",
           sort: 1
       }

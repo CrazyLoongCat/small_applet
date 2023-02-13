@@ -21,6 +21,8 @@ Page({
    */
   onLoad(options) {
     var app = getApp()
+    console.log(app,'appappapp')
+   
     this.setData({
       baseUrl: app.globalData.globalBaseUrl
     })
@@ -185,7 +187,7 @@ next_calculator(){
 
     }else if( e.currentTarget.dataset.platformurl.urlType == 4 ){
       wx.navigateTo({
-        url: e.currentTarget.dataset.platformurl.platformUrl,
+        url: '/pages/orderSearchList/index?name='+ e.currentTarget.dataset.platformurl.platformName
         // '/pages/orderSearchList/index?name='+ e.currentTarget.dataset.item.platformName
       })
     }

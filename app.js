@@ -52,6 +52,7 @@ App({
   },
   globalData: {
     testData: null,
-    globalBaseUrl: baseUrl
+    globalBaseUrl: baseUrl,
+    platformName: '' //跳转到返利列表页使用
   }
 })
