@@ -30,6 +30,7 @@ App({
             method: "POST",
             header: {},
             success: function (res) {
+              console.log(res,'999999999999')
               wx.setStorageSync('token', res.data.data)
               /**
                * 设置全局变量

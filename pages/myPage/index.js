@@ -11,6 +11,7 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     balance: '0.00',
+    apUserId: '',
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
@@ -29,6 +30,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    const token = wx.getStorageSync('token')
+    this.setData({
+      apUserId: token.apUserId
+    })
+    
     if (wx.getUserProfile) {
       this.setData({
         canIUseGetUserProfile: true

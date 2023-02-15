@@ -11,7 +11,8 @@
   </view>
   <view class="buttonList">
     <button class="butNo" bindtap="butNo">暂不授权</button>
-    <button class="butYes" bindtap="butYes">立即授权</button>
+    <button class="butYes"  open-type="getPhoneNumber" type="primary"
+      bindgetphonenumber="getPhoneNumber">立即授权</button>
   </view>
 
 </view>
