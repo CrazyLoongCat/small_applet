@@ -47,18 +47,71 @@ Page({
     }
     // console.log(res,this.data.name,'this.data.name')
   },
-  shareBtnother(e){
-    // console.log(e,'00000000000')
+  async shareBtnother(e){
+    let productSource = ''
+    if( e.currentTarget.dataset.item.product_source == 'YMALL' ){
+      productSource = 1
+    }else if( e.currentTarget.dataset.item.product_source == 'OWN' ){
+      productSource = 2
+    }
+    let res = await request({
+      method: "post",
+      url: "/webapi/ap/user/cl/generate/url",
+      data: {
+          warehouseId: e.currentTarget.dataset.item.warehouse_id,
+          skuId: e.currentTarget.dataset.item.external_sku_id,
+          productSource: productSource,
+      }
+    });
+
     wx.navigateToMiniProgram({
-      appId: e.currentTarget.dataset.item.sales_info[0].miniprogram_appid,  //appid
-      path: e.currentTarget.dataset.item.sales_info[0].url_miniprogram,//path
+      appId: res.data.appId,  //appid
+      path: res.data.path,//path
       extraData: {  //参数
-       
       },
-      envVersion: 'release', //开发版develop 开发版 trial   体验版 release 正式版 
+      //envVersion: 'release', //开发版develop 开发版 trial   体验版 release 正式版 
       success(res) {
         console.log('成功')
         // 打开成功
+      }
+    })
+  },
+  
+  async shareBtnotherUrl(e){
+    let productSource = ''
+    if( e.currentTarget.dataset.item.product_source == 'YMALL' ){
+      productSource = 1
+    }else if( e.currentTarget.dataset.item.product_source == 'OWN' ){
+      productSource = 2
+    }
+    let resData = await request({
+      method: "post",
+      url: "/webapi/ap/user/cl/generate/url",
+      data: {
+          warehouseId: e.currentTarget.dataset.item.warehouse_id,
+          skuId: e.currentTarget.dataset.item.external_sku_id,
+          productSource: productSource,
+      }
+    });
+
+    wx.showModal({
+      title: '',
+      content: '复制链接分享',
+      success(res) {
+        wx.setClipboardData({ //复制文本
+          data: resData.data.shortUrl,
+          success: function (res) {
+            wx.getClipboardData({ //获取复制文本
+              success: function (res) {
+                wx.showToast({
+                  title: '复制成功',
+                  icon: "none", //是否需要icon
+                  mask: "ture" //是否设置点击蒙版，防止点击穿透
+                })
+              }
+            })
+          }
+        })
       }
     })
   },
