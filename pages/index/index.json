@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "首页",
+  "navigationBarTitleText": "免税Go花得利",
   "usingComponents": {
     "van-icon": "@vant/weapp/icon/index",
     "van-grid": "@vant/weapp/grid/index",
