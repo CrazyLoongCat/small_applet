@@ -6,21 +6,7 @@
   </block>
 </swiper>
 
-
-<view class="operation clearfloat">
-  <view class="operationItem">
-    <navigator url="/pages/order/orderList/index">
-      <view>
-        <view class="imgBox">
-          <image src="../../img/chakandingdan1.png" mode="" />
-        </view>
-        <view>
-          订单查询
-        </view>
-      </view>
-    </navigator>
-  </view>
-  <view class="operationItem">
+<view class="operationItem">
     <navigator url="/pages/order/submitOrder/index">
       <view>
         <view class="imgBox">
@@ -33,6 +19,20 @@
     </navigator>
 
   </view>
+<view class="operation clearfloat">
+  <view class="operationItem">
+    <navigator url="/pages/order/orderList/index">
+      <view>
+        <view class="imgBox">
+          <image src="../../img/chakandingdan1.png" mode="" />
+        </view>
+        <view>
+          手动订单明细
+        </view>
+      </view>
+    </navigator>
+  </view>
+
   <view class="operationItem">
     <navigator url="/pages/order/submitList/index">
     <view>
@@ -40,7 +40,7 @@
         <image src="../../img/dingdan1.png" mode="" />
       </view>
       <view>
-        提交记录
+        自动订单明细
       </view>
     </view>
     </navigator>
@@ -51,7 +51,7 @@
         <image src="../../img/tixing1.png" mode="" />
       </view>
       <view>
-        新手教程
+        返现须知
       </view>
     </view>
   </view>
@@ -117,38 +117,7 @@
     热门活动
   </view>
 
-  <view >
-    <block wx:for="{{activityList}}" wx:key="index">
-      <view class="grid1 " data-platformUrl="{{item}}" bindtap="platformsItemClick">
-        <view class="gridItem1">
-          <view class="btitle">
-            <image class="images" src="{{ item.activity_main_img}}" mode="" />
-          </view>
-          <view class="atitle">
-             <view class="titletop">
-              {{item.activity_title}}
-             </view>
-             <view>
-               <span class="spansty">活动时间:</span>
-               {{item.start_time}}
-             </view>
-             <view>
-              <span class="spansty">活动利益:</span>
-               {{item.sale_point}}
-             </view>
-             <view>
-              <span class="spansty">商家来源:</span>
-               {{item.source_name}}
-             </view>
-             <view class="chakanbtnbox" >
-               <view class="chakanbtn" bindtap="chakan" data-app='{{item}}'>
-                 立即查看
-               </view>
-             </view>
-          </view>
-        </view>
-      </view>
-    </block>
-
+  <view class="images" bindtap="gotoHot">
+    <image  src="../../img/2.png" mode=""/>
   </view>
 </view>

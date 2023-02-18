@@ -42,7 +42,7 @@
     <navigator url="{{item.url}}" class='home_grid'>
      <image src="{{item.img}}" class="home_icon"></image>
      <view class="home_grid_text">{{item.name}}</view>
-     <button class="contrat" wx:if="{{item.id == 3}}" open-type="contact">
+     <button class="contrat" wx:if="{{item.id == 8}}" open-type="contact">
      </button>
     </navigator>
    </block>

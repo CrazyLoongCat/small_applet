@@ -1,0 +1,36 @@
+<view class="footer ">
+  <view >
+    <block wx:for="{{activityList}}" wx:key="index">
+      <view class="grid1 " data-platformUrl="{{item}}">
+        <view class="gridItem1">
+          <view class="btitle">
+            <image class="images" src="{{ item.activity_main_img}}" mode="" />
+          </view>
+          <view class="atitle">
+             <view class="titletop">
+              {{item.activity_title}}
+             </view>
+             <view>
+               <span class="spansty">活动时间:</span>
+               {{item.start_time}}
+             </view>
+             <view>
+              <span class="spansty">活动利益:</span>
+               {{item.sale_point}}
+             </view>
+             <view>
+              <span class="spansty">商家来源:</span>
+               {{item.source_name}}
+             </view>
+             <view class="chakanbtnbox" >
+               <view class="chakanbtn" bindtap="chakan" data-app='{{item}}'>
+                 立即查看
+               </view>
+             </view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+  </view>
+</view>

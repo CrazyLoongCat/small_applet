@@ -14,7 +14,8 @@
     "pages/h5index/index",
     "pages/orderSearchList/index",
     "pages/loginButtonIndex/index",
-    "pages/orderSearchListTar/index"
+    "pages/orderSearchListTar/index",
+    "pages/hotactive/index"
   ],
   
     "usingComponents": {

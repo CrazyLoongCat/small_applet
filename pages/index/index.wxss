@@ -83,52 +83,6 @@
   background-color: #FECB60;
   margin-bottom: 30rpx;
 }
-
-.grid1{
-  width: 100%;
-  float: left;
-  text-align: center;
-  font-size: 24rpx;
-  background-color: #ccc;
-}
-.gridItem1{
-  display: flex;
-  margin-bottom: 20rpx;
-  background-color: #fff;
-  padding: 0 15rpx;
-}
-
 .images{
-  width: 100%;
-  height: 200rpx;
-  margin-right: 20rpx;
-}
-.btitle{
-  width: 35%;
-  margin-right: 3%;
-}
-.atitle{
-  width: 60%;
-  text-align: left;
-  
-}
-.titletop{
-  font-size: 26rpx;
-  font-weight: 700;
-  margin-bottom: 10rpx;
-}
-.spansty{
-  margin-right: 10rpx;
-}
-.chakanbtnbox{
-  display: flex;
-  justify-content: flex-end;
-}
-.chakanbtn{
-   background-color: rgb(169, 31, 23);
-   width: 100rpx;
-   height: 30rpx;
-   border-radius: 10rpx;
-   padding: 10rpx;
-   color: #fff;
+  text-align: center;
 }
