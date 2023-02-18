@@ -76,14 +76,16 @@
        method: "GET",
        url: "/webapi/ap/configPlatform/getPlatforms",
        data: {
-         codeName: "platformName"
-       }
+        urrent: 1,
+        size: 20,
+      }
      });
 
      var obj = {
        platformName: "全部",
      }
      var data = res.data.records;
+     data = data.filter(item => (item.platformName != "中免日上"&&item.platformName != "GDF海控"&&item.platformName != "海旅免税会员购"))
      data.unshift(obj)
      this.setData({
        platformsList: data

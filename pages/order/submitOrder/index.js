@@ -37,8 +37,10 @@
          size: 20,
        }
      });
+     var arr = res.data.records
+     arr = arr.filter(item => (item.platformName != "中免日上"&&item.platformName != "GDF海控"&&item.platformName != "海旅免税会员购"))
      this.setData({
-       orderTypeList: res.data.records,
+       orderTypeList: arr,
      })
    },
    //购物平台发生变化

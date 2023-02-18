@@ -13,7 +13,7 @@
     <block wx:for="{{ orderList }}" wx:key="index">
       <view class="orderListBox">
         <view class="name">
-          平台名称: {{item.platformName}}
+          平台名称: {{item.kaName}}
         </view>
         <view class="name">
           订单编号: {{item.externalOrderId}}
