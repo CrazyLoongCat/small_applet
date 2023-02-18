@@ -16,7 +16,12 @@
      moneyObj: {}, //顶部钱数 对象
      orderList: [], //订单列表
      current: 1, //当前页数
-     size: 10, //每页笔数 
+     size: 20, //每页笔数 
+     orderTypeList: [
+       { typeName: '购物平台'},
+      //  { typeName: '跟单状态'},
+      //  { typeName: '审核状态'}
+     ]
    },
 
    /**
@@ -33,7 +38,16 @@
 
 
    },
-
+   orderTypeClick(e) {
+    this.setData({
+      orderTypeIndex: e.currentTarget.dataset.index
+    })
+    this.setData({
+      current: 1, //当前页数
+      size: 20, //每页笔数
+    })
+    this.orderListFn()
+  },
 
    async orderListFn() {
      var data;
@@ -46,11 +60,12 @@
 
      const res = await request({
        method: "GET",
-       url: "/webapi/ap/user/order/getOrders",
+       url: "/webapi/ap/user/base/order/cl/orders",
        data: data
      });
      if (res.data != null) {
        var data = res.data.records;
+    
        var orderList = this.data.orderList;
        var num = this.data.current;
        if (num == 1) {
@@ -75,8 +90,6 @@
          orderList: []
        })
      }
-
-
    },
    /**
     * 生命周期函数--监听页面初次渲染完成

@@ -1,5 +1,14 @@
 <view> 
   <!-- 订单列表 -->
+  <scroll-view scroll-x="true" class="scrollBox">
+    <block wx:for="{{orderTypeList}}" wx:key="index">
+      <view class="itemBox {{orderTypeIndex==index?'active':''}}" data-index="{{index}}" bindtap='orderTypeClick'>
+        <view class="money"> {{item.typeName}}</view>
+        <view class="footer"></view>
+      </view>
+    </block>
+  </scroll-view>
+
   <view>
     <block wx:for="{{ orderList }}" wx:key="index">
       <view class="orderListBox">
@@ -7,20 +16,22 @@
           平台名称: {{item.platformName}}
         </view>
         <view class="name">
-          订单编号: {{item.orderId}}
+          订单编号: {{item.externalOrderId}}
         </view>
 
         <view>
-          订单金额: {{item.orderAmt}}
+          订单金额: {{item.paymentAmount}}
+        </view>
+        <view >
+          <view class="skuNameChinese">
+            商品名称: {{item.skuNameChinese}}
+          </view>
         </view>
         <view>
-          返利金额: {{item.returnAmt}}
-        </view>
-        <view>
-          订单状态: {{item.checkStatusName}}
+          订单状态: {{item.orderStatusName}}
         </view>
         <view class="time">
-          下单时间: {{item.placedTime}}
+          下单时间: {{item.payedTime || ''}}
         </view>
       </view>
     </block>

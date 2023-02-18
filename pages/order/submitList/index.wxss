@@ -67,7 +67,7 @@
 }
 
 .orderListBox view {
-  height: 60rpx;
+  /* height: 60rpx; */
   line-height: 60rpx;
 }
 
@@ -76,4 +76,3 @@
   font-size: 30rpx;
 }
 
-.orderListBox .name {}
