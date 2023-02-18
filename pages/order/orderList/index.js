@@ -51,13 +51,13 @@
      var arr = [];
      var data = res.data;
      for (var j = 0; j < data.length; j++) {
-       if (data[j].codeValue == "未生效返利") {
+       if (data[j].codeValue == "已成功跟单") {
          arr.push(data[j])
        }
        if (data[j].codeValue == "已生效返利") {
          arr.push(data[j])
        }
-       if (data[j].codeValue == "取消") {
+       if (data[j].codeValue == "已取消") {
          arr.push(data[j])
        }
        if (data[j].codeValue == "已返利") {
@@ -173,20 +173,20 @@
      var orderTypeList = this.data.orderTypeList;
      for (var k = 0; k < orderTypeList.length; k++) {
        //         "all": 0,-- 全部订单
-       //         "unRebate": 0, -- 待生效返利
+       //         "unRebate": 0, -- 已成功跟单
        //         "needRebate": 0,--已生效返利
        //         "cancel": 0, --已取消
        //         "rebated": 0--已返利
        if (orderTypeList[k].codeValue == "全部订单") {
          orderTypeList[k].money = moneyObj.all
        }
-       if (orderTypeList[k].codeValue == "未生效返利") {
+       if (orderTypeList[k].codeValue == "已成功跟单") {
          orderTypeList[k].money = moneyObj.unRebate
        }
        if (orderTypeList[k].codeValue == "已生效返利") {
          orderTypeList[k].money = moneyObj.needRebate
        }
-       if (orderTypeList[k].codeValue == "取消") {
+       if (orderTypeList[k].codeValue == "已取消") {
          orderTypeList[k].money = moneyObj.cancel
        }
        if (orderTypeList[k].codeValue == "已返利") {
