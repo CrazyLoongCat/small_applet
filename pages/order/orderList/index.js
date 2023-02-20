@@ -24,13 +24,11 @@
     * 生命周期函数--监听页面加载
     */
    onLoad(options) {
-    
      this.init()
    },
 
 
    init: async function () {
-
      await this.getCodeTypeFn()
      await this.getPlatformsFn()
      await this.orderListFn()
@@ -48,26 +46,9 @@
      var obj = {
        codeValue: "全部订单",
      }
-     var arr = [];
-     var data = res.data;
-     for (var j = 0; j < data.length; j++) {
-       if (data[j].codeValue == "已成功跟单") {
-         arr.push(data[j])
-       }
-       if (data[j].codeValue == "已生效返利") {
-         arr.push(data[j])
-       }
-       if (data[j].codeValue == "已取消") {
-         arr.push(data[j])
-       }
-       if (data[j].codeValue == "已返利") {
-         arr.push(data[j])
-       }
-     }
-
-     arr.unshift(obj)
+     res.data.unshift(obj)
      this.setData({
-       orderTypeList: arr
+       orderTypeList: res.data
      })
 
    },
@@ -182,18 +163,24 @@
        if (orderTypeList[k].codeValue == "全部订单") {
          orderTypeList[k].money = moneyObj.all
        }
-       if (orderTypeList[k].codeValue == "已成功跟单") {
-         orderTypeList[k].money = moneyObj.unRebate
+       if (orderTypeList[k].codeKey == "0") {
+         orderTypeList[k].money = moneyObj.status0
        }
-       if (orderTypeList[k].codeValue == "已生效返利") {
-         orderTypeList[k].money = moneyObj.needRebate
+       if (orderTypeList[k].codeKey == "1") {
+         orderTypeList[k].money = moneyObj.status1
        }
-       if (orderTypeList[k].codeValue == "已取消") {
-         orderTypeList[k].money = moneyObj.cancel
+       if (orderTypeList[k].codeKey == "2") {
+         orderTypeList[k].money = moneyObj.status2
        }
-       if (orderTypeList[k].codeValue == "已返利") {
-         orderTypeList[k].money = moneyObj.rebated
+       if (orderTypeList[k].codeKey == "3") {
+         orderTypeList[k].money = moneyObj.status3
        }
+       if (orderTypeList[k].codeKey == "4") {
+        orderTypeList[k].money = moneyObj.status4
+      }
+      if (orderTypeList[k].codeKey == "5") {
+        orderTypeList[k].money = moneyObj.status5
+      }
      }
 
      this.setData({
