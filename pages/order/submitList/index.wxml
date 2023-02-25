@@ -1,41 +1,100 @@
-<view> 
+<view class="pages"> 
   <!-- 订单列表 -->
-  <scroll-view scroll-x="true" class="scrollBox">
-    <block wx:for="{{orderTypeList}}" wx:key="index">
-      <view class="itemBox {{orderTypeIndex==index?'active':''}}" data-index="{{index}}" bindtap='orderTypeClick'>
-        <view class="money"> {{item.typeName}}</view>
+  <view class="top">
+    <view class="allMoney">
+      {{allMoney}}
+    </view>
+    <view class="yeji">
+      总业绩(元)
+    </view>
+  </view>
+
+  <scroll-view scroll-x="true" class="scrollBoxDate">
+    <block wx:for="{{dateTypeList}}" wx:key="index">
+      <view class="itemBox {{dateTypeIndex==index?'active':''}}" data-index="{{index}}" bindtap='dateTypeClick'>
+        <view>{{item.dateName}}</view>
         <view class="footer"></view>
       </view>
     </block>
-  </scroll-view>
-
-  <view>
-    <block wx:for="{{ orderList }}" wx:key="index">
-      <view class="orderListBox">
-        <view class="name">
-          平台名称: {{item.platformName}}
-        </view>
-        <view class="name">
-          订单编号: {{item.externalOrderId}}
-        </view>
-
+    <view class="chengjiao">
+      <view class="chengjiaoleft">
         <view>
-          订单金额: {{item.paymentAmount}}
-        </view>
-        <view >
-          <view class="skuNameChinese">
-            商品名称: {{item.skuNameChinese}}
-          </view>
+          {{allAmt}}
         </view>
         <view>
-          订单状态: {{item.orderStatusName}}
-        </view>
-        <view class="time">
-          下单时间: {{item.payedTime || ''}}
+          成交金额
         </view>
       </view>
-    </block>
+      <view class="chengjiaoright">
+        <view>
+          {{allSum}}
+        </view>
+        <view>
+          成交订单数
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+
+  <view class='search'>
+     <view class="search-box">
+        <icon type="search" size="20" class='icon_search'></icon>
+        <input type='text'  placeholder='请输入订单编号进行模糊搜索' placeholder-class="center" class="inputS" confirm-type='search'  bindconfirm="bindconfirm"  bindinput="focusHandler">
+        </input>
+     </view>
+    </view>
+  
+  <view class="bottom">
+    <view class="mingxi">
+      订单明细
+    </view>
+    <scroll-view scroll-x="true" class="scrollBox">
+      <block wx:for="{{orderMoneyList}}" wx:key="index">
+        <view class="itemBox {{orderMoneyIndex==index?'active':''}}" data-index="{{index}}" bindtap='orderMoneyClick'>
+          <view class="money"> {{item.typeName}}</view>
+          <view class="footer"></view>
+        </view>
+      </block>
+    </scroll-view>
+    
+    <scroll-view scroll-x="true" class="scrollBox">
+      <block wx:for="{{orderTypeList}}" wx:key="index">
+        <view class="itemBox {{orderTypeIndex==index?'active':''}}" data-index="{{index}}" bindtap='orderTypeClick'>
+          <view class="money"> {{item.typeName}}</view>
+          <view class="footer"></view>
+        </view>
+      </block>
+    </scroll-view>
+    <view>
+      <block wx:for="{{ orderList }}" wx:key="index">
+        <view class="orderListBox">
+          <view class="name">
+            平台名称: {{item.platformName}}
+          </view>
+          <view class="name">
+            订单编号: {{item.externalOrderId}}
+          </view>
+
+          <view>
+            订单金额: {{item.paymentAmount}}
+          </view>
+          <view >
+            <view class="skuNameChinese">
+              商品名称: {{item.skuNameChinese}}
+            </view>
+          </view>
+          <view>
+            订单状态: {{item.orderStatusName}}
+          </view>
+          <view class="time">
+            下单时间: {{item.payedTime || ''}}
+          </view>
+        </view>
+      </block>
+    </view>
   </view>
+
 
 
 

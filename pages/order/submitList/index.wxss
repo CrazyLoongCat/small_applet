@@ -1,11 +1,44 @@
+page {
+  background-color: #ccc;
+}
+.pages{
+  position: relative;
+}
+
 .TwoscrollBox,
 .scrollBox {
   white-space: nowrap;
   width: 100%;
+  margin-top: 30rpx;
+  border-bottom: 1px solid #ccc;
 }
-
+.scrollBoxDate {
+  white-space: nowrap;
+  width: 96%;
+  position: absolute;
+  margin: 0 auto;
+  top: 360rpx;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+.scrollBoxDate .itemBox {
+  text-align: center;
+  width: 20%;
+  display: inline-block;
+  font-size: 30rpx;
+  padding: 10rpx 0;
+}
+/* .scrollBoxDate .itemBox .footer {
+  width: 80%;
+  margin: 0 auto;
+  height: 6rpx;
+  border-radius: 40rpx;
+  margin-top: 32rpx;
+} */
 .money {
-  margin: 20rpx 0;
+  margin: 10rpx 0;
 }
 
 .TwoscrollBox .itemBox {
@@ -17,10 +50,10 @@
 
 .scrollBox .itemBox {
   text-align: center;
-  width: 25%;
+  width: 33.33%;
   display: inline-block;
   font-size: 30rpx;
-  padding: 10rpx 0;
+  position: relative;
 }
 
 .TwoscrollBox .itemBox .footer,
@@ -29,7 +62,8 @@
   margin: 0 auto;
   height: 6rpx;
   border-radius: 40rpx;
-  margin-top: 12rpx;
+  position: absolute;
+  top: 54rpx;
 }
 
 .active {
@@ -38,6 +72,7 @@
 
 .active .footer {
   background: red;
+  height: 4rpx;
 }
 
 .txBtn {
@@ -75,4 +110,65 @@
   color: #999;
   font-size: 30rpx;
 }
+.top{
+  width: 100%;
+  height: 260rpx;
+  background-color: rgb(93, 59, 234);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.allMoney{
+  font-size: 26px;
+  color: #fff;
+}
+.yeji{
+  color: #ccc;
+  font-size: 14px;
+}
 
+.chengjiao{
+  height: 200rpx;
+  width: 100%;
+  display: flex;
+}
+.chengjiaoleft{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.chengjiaoright{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.search{
+  background-color: #fff;
+  padding: 10rpx ;
+  border-radius: 10rpx;
+  width: 94%;
+  margin:0 auto;
+  margin-top: 250rpx;
+}
+.search-box{
+  display: flex;
+  background-color: #ccc;
+  border-radius: 10rpx;
+  padding: 5rpx;
+}
+.inputS{
+  width: 90%;
+}
+.bottom{
+  background-color: #fff;
+  padding: 10rpx ;
+  border-radius: 10rpx;
+  width: 94%;
+  margin:0 auto;
+  margin-top: 20rpx;
+}
