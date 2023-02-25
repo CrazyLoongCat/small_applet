@@ -118,6 +118,6 @@
   </view>
 
   <view class="images" bindtap="gotoHot">
-    <image  src="../../img/2.png" mode=""/>
+    <image  src="{{ baseUrl + '/webapi' +  hotImageUrl}}" mode=""/>
   </view>
 </view>

@@ -12,6 +12,7 @@ Page({
     tips2: [],
     platformsList: [],
     bannerList: [],
+    hotImageUrl: '',
     urlArr: [],
     baseUrl: '',
   },
@@ -26,21 +27,10 @@ Page({
     this.setData({
       baseUrl: app.globalData.globalBaseUrl
     })
-    if (app.globalData.testData && app.globalData.testData != '') {
-      /**
-       * 调用首页接口
-       */
-      this.getCodeTypeFn()
-      this.getPlatformsFn()
-      this.getLunbo()
-    } else {
-      app.testDataCallback = testData => {
-        if (testData != '') {
-          this.getCodeTypeFn()
-          this.getPlatformsFn()
-        }
-      }
-    }
+    this.getCodeTypeFn()
+    this.getPlatformsFn()
+    this.getLunbo()
+    this.getHotImageUrl()
 
   }, 
   //去热门活动
@@ -116,6 +106,28 @@ Page({
       }
       this.setData({
         bannerList: data
+      })
+    }
+    console.log(this.data.bannerList,'bannerList')
+  },
+
+  // 热门活动图片
+  async getHotImageUrl() {
+    const res = await request({
+      method: "GET",
+      url: "/webapi/ap/codeType/getCodeType?codeName=hotImage",
+      data: {
+      }
+    });
+    if( res.code == 0 ){
+      let data = ''
+      if( res.data.length > 0 ){
+        res.data.forEach( item => {
+          data = res.data[0].codeValue
+        })
+      }
+      this.setData({
+        hotImageUrl: data
       })
     }
     console.log(this.data.bannerList,'bannerList')

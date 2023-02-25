@@ -79,6 +79,9 @@
           <view>
             订单金额: {{item.paymentAmount}}
           </view>
+          <view>
+            返利金额: {{item.returnAmt}}
+          </view>
           <view >
             <view class="skuNameChinese">
               商品名称: {{item.skuNameChinese}}
