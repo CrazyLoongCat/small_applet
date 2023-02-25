@@ -51,27 +51,39 @@
 
 
    init: async function () {
-     await this.orderListFn()
+     await this.initAllMoney()
      await this.initDateType()
-
+     await this.orderListFn()
    },
-   //初始化 日期
-   async initDateType(e){
-     let data = {
-      timeType: '1'
-     }
+   //初始化 总金额
+   async initAllMoney(e){
      const res = await request({
       method: "GET",
       url: "/webapi/ap/user/base/order/cl/get/statistics",
-      data: data
     });
     if( res.code == 0 ){
       this.setData({
-        allAmt: res.data.allAmt,
-        allSum: res.data.allSum
+        allMoney: res.data.allAmt
       })
     }
    },
+    //初始化 日期
+    async initDateType(e){
+      let data = {
+       timeType: '1'
+      }
+      const res = await request({
+       method: "GET",
+       url: "/webapi/ap/user/base/order/cl/get/statistics",
+       data: data
+     });
+     if( res.code == 0 ){
+       this.setData({
+         allAmt: res.data.allAmt,
+         allSum: res.data.allSum
+       })
+     }
+    },
    //输入框输入事件
    focusHandler(e){
       // console.log(e,'444444444')

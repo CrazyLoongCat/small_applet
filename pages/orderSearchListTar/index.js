@@ -123,6 +123,7 @@ Page({
     this.setData({
       inputData: e.detail.value
     })
+    this.data.orderdata = [];
     // console.log(this.data.inputData,'55555555555')
   },
    
