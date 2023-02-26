@@ -7,10 +7,11 @@ const { miniProgram: { envVersion } } = wx.getAccountInfoSync();
 console.log(envVersion,'8888888888888888')
 switch (envVersion) {
     case "develop": // 开发版
-        //  baseUrl = "https://huahua.bj.cn";
         baseUrl = "http://82.156.242.246:60001";
         break;
- 
+    case "trial": // 开发版
+        baseUrl = "http://82.156.242.246:60001";
+        break;
     default:    // 正式版
           //  baseUrl = "http://82.156.242.246:60001";
         baseUrl = "https://huahua.bj.cn";

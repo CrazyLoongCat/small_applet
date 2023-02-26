@@ -13,7 +13,6 @@ Page({
     platformsList: [],
     bannerList: [],
     hotImageUrl: '',
-    urlArr: [],
     baseUrl: '',
   },
 
@@ -22,14 +21,30 @@ Page({
    */
   onLoad(options) {
     var app = getApp()
-    console.log(app,'appappapp')
-   
+    const scene = decodeURIComponent(options.scene) // 获取到二维码原始链接内容
+    const shareUserId = scene.substr(scene.indexOf("=")+1,scene.length);
+    console.log(shareUserId)
     this.setData({
       baseUrl: app.globalData.globalBaseUrl
     })
+    const token = wx.getStorageSync('token')
+    if (token) {
+      // 登记推广人信息
+      this.submitShareRef(shareUserId)
+    } else {
+      app.checkloginReadyCallback = res => {
+        // 登记推广人信息
+        this.submitShareRef(shareUserId)
+      }
+    }
+    
+    // 获取码表
     this.getCodeTypeFn()
+    // 获取平台信息
     this.getPlatformsFn()
+    // 获取轮播图
     this.getLunbo()
+    // 获取热门活动图
     this.getHotImageUrl()
 
   }, 
@@ -45,7 +60,6 @@ Page({
       method: "GET",
       url: "/webapi/ap/tipMessage/getTips",
       data: {
-        codeName: "checkStatus"
       }
     });
     if( res.code == 0 ){
@@ -130,7 +144,25 @@ Page({
         hotImageUrl: data
       })
     }
-    console.log(this.data.bannerList,'bannerList')
+    console.log(this.data.hotImageUrl,'hotImageUrl')
+  },
+  // 登记推广人关系
+  async submitShareRef(shareUserId) {
+    const token = wx.getStorageSync('token')
+    console.log(token,"token");
+    console.log(shareUserId,"shareUserId");
+    // 新用户 并且存在分享参数
+    if (token.isNew && shareUserId != "undefined") {
+      console.log("执行了");
+      await request({
+        method: "POST",
+        url: "/webapi/ap/system/submit/share/ref",
+        data: {
+          userId: token.token,
+          shareUserId: shareUserId
+        }
+      });
+    }
   },
 
 //新手教程
@@ -142,24 +174,6 @@ next_calculator(){
 //点击跳转
   platformsItemClick(e) {
     if( e.currentTarget.dataset.platformurl.urlType == 1 ){
-      // console.log()
-      // if( e.currentTarget.dataset.platformurl.platformUrl ){
-      //   let arr = e.currentTarget.dataset.platformurl.platformUrl.split('?')
-      //   this.setData({
-      //     urlArr: arr
-      //   })
-      // }
-      // console.log(this.data.urlArr,'this.data.urlArr')
-      // wx.navigateTo({
-      //   url: '/pages/h5index/index',
-      //   success:  (res) => {
-      //     // 通过eventChannel像跳转的页面传参数
-      //     res.eventChannel.emit('jumpRevoke', {
-      //         id: this.data.urlArr[1],
-      //         url: this.data.urlArr[0]
-      //     })
-      //    }
-      // })
       wx.showModal({
         title: '',
         content: '复制链接去购物',

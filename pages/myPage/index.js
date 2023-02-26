@@ -22,7 +22,7 @@ Page({
       {id: 2,name: '自动提交订单', url: '/pages/order/submitList/index',img: '../../img/54.jpg' },
       {id: 3,name: '返利须知', url: '/pages/newCusterCourse/index',img: '../../img/25.jpg' },
       {id: 4,name: '推广中心', url: '',img: '../../img/25.jpg' },
-      {id: 5,name: '活动列表', url: '',img: '../../img/25.jpg' },
+      {id: 5,name: '活动列表', url: '/pages/hotactive/index',img: '../../img/25.jpg' },
       {id: 6,name: '视频教程', url: '',img: '../../img/25.jpg' },
       {id: 7,name: '推广规则', url: '',img: '../../img/25.jpg' },
       {id: 8,name: '联系客服', url: '',img: '../../img/21.jpg' },
