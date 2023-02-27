@@ -1,0 +1,49 @@
+<view class="topMsg">
+  <view class="userinfo">
+   
+    <block wx:if="{{canIUseOpenData}}">
+      <view class="userinfo-avatar"  >
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <text class="userinfo-nickname">{{apUserId}}</text>
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image   class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{apUserId}}</text>
+    </block>
+  </view>
+
+</view>
+<view>
+<view wx:if="{{canIUseOpenData}}" class="balancebg">
+  <view wx:if="{{canIUseOpenData}}" class="balance">
+    <view   >
+      可提现收益
+    </view>
+    <view  class = "moneyshow" >
+      ¥{{balance}}
+    </view>
+  </view>
+  <view wx:if="{{canIUseOpenData}}" class="balanceBtnbg">
+    <view  class="balanceBtn" bindtap="next_calculator">
+      申请提现
+    </view>
+  </view>
+</view>
+
+
+  <view class="home_grids">
+   <block wx:for="{{griddata}}" wx:key="id">
+    <navigator url="{{item.url}}" class='home_grid'>
+     <image src="{{item.img}}" class="home_icon"></image>
+     <view class="home_grid_text">{{item.name}}</view>
+    
+    </navigator>
+   </block>
+  </view>
+</view>

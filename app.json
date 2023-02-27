@@ -15,7 +15,9 @@
     "pages/orderSearchList/index",
     "pages/loginButtonIndex/index",
     "pages/orderSearchListTar/index",
-    "pages/hotactive/index"
+    "pages/hotactive/index",
+    "pages/promoteCenter/index",
+    "pages/myTeam/index"
   ],
   
     "usingComponents": {

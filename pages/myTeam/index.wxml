@@ -1,0 +1,12 @@
+<view class="top">
+  <view wx:for="{{teamList}}" wx:key="id" class="info">
+    <view class="left">
+      <view class="userName">用户编号:</view>
+      <view class="userName1">{{item.userName}}</view>
+    </view>
+    <view class="right">
+      <view class="shareTime">推广日期:</view>
+      <view class="shareTime1">{{item.shareTime}}</view>
+    </view>
+   </view>
+</view>

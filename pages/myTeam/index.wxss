@@ -1,0 +1,28 @@
+
+page {
+  padding-top: 20rpx;
+}
+.info {
+  display: flex;
+  font-size: 26rpx;
+  padding: 20rpx 10rpx;
+
+}
+.left{
+  width: 38%;
+  display: flex;
+
+}
+.right{
+  width: 62%;
+  display: flex;
+}
+.userName{
+  font-weight: 700;
+  padding-right: 4rpx;
+}
+.shareTime{
+  font-weight: 700;
+  padding-right: 4rpx;
+}
+
