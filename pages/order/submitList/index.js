@@ -218,8 +218,8 @@
     //平台类型
     let obj2 = {
       '0' : '',
-      '1' : 3,
-      '2' : 4,
+      '1' : 4,
+      '2' : 5,
     }
     data.timeType = obj[this.data.dateTypeIndex]
     data.checkStatus = obj1[this.data.orderMoneyIndex]

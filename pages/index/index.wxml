@@ -118,6 +118,8 @@
   </view>
 
   <view class="images" bindtap="gotoHot">
-    <image  src="../../img/2.png" mode=""/>
+    <block wx:if="{{hotImageUrl}}">
+    <image  src="{{ baseUrl + '/webapi' +  hotImageUrl}}" mode=""/>
+  </block>
   </view>
 </view>
