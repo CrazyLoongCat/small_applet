@@ -1,0 +1,6 @@
+<view class="server">
+    <view class="downLoad" bindtap="downLoad">
+       保存到本地
+    </view>
+    <image src="{{imageUrl}}" alt="" mode='widthFix'/>
+</view>

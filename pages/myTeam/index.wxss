@@ -2,6 +2,13 @@
 page {
   padding-top: 20rpx;
 }
+.teams{
+  padding-left: 10rpx;
+}
+.allPeople{
+  padding: 0 10rpx;
+  font-weight: 800;
+}
 .info {
   display: flex;
   font-size: 26rpx;

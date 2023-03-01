@@ -20,7 +20,7 @@ Page({
       {id: 0,name: '提现记录', url: '/pages/balanceHistory/index',img: '../../img/23.jpg' },
       {id: 1,name: '分销订单', url: '',img: '../../img/54.jpg' },
       {id: 2,name: '我的团队', url: '/pages/myTeam/index',img: '../../img/4059.png' },
-      {id: 3,name: '推广二维码', url: '/pages/newCusterCourse/index',img: '../../img/040.png' },
+      {id: 3,name: '推广二维码', url: '/pages/erweima/index',img: '../../img/040.png' },
     
     ]
   },

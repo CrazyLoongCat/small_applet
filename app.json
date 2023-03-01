@@ -17,7 +17,9 @@
     "pages/orderSearchListTar/index",
     "pages/hotactive/index",
     "pages/promoteCenter/index",
-    "pages/myTeam/index"
+    "pages/myTeam/index",
+    "pages/erweima/index",
+    "pages/shareRule/index"
   ],
   
     "usingComponents": {

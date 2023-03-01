@@ -11,7 +11,8 @@ Page({
     msg: '',
     current: 1,
     size: 20,
-    teamList: []
+    teamList: [],
+    allPeople: 0,
   },
 
   /**
@@ -35,6 +36,9 @@ Page({
     console.log(res,'7777')
     if (res.code == 0) {
       var data = res.data.records;
+      this.setData({
+        allPeople: res.data.total
+      })
       var teamList = this.data.teamList;
       var num = this.data.current;
       let that = this;
