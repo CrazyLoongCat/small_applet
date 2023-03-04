@@ -143,8 +143,6 @@
     })
     let data = {
       timeType: this.data.dateTypeIndex, //日期
-      checkStatus: this.data.orderMoneyIndex, //分佣
-      platform: this.data.orderTypeIndex,//平台
     }
     let obj = {
       '0' : 1,
