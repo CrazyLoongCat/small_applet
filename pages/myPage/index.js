@@ -17,14 +17,14 @@ Page({
     canIUseGetUserProfile: false,
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
     griddata: [
-      {id: 0,name: '提现记录', url: '/pages/balanceHistory/index',img: '../../img/23.jpg' },
-      {id: 1,name: '手动提交订单', url: '/pages/order/orderList/index',img: '../../img/59.jpg' },
-      {id: 2,name: '自动提交订单', url: '/pages/order/submitList/index',img: '../../img/54.jpg' },
-      {id: 3,name: '返利须知', url: '/pages/newCusterCourse/index',img: '../../img/25.jpg' },
+      {id: 0,name: '提现记录', url: '/pages/balanceHistory/index',img: '../../img/31.png' },
+      {id: 1,name: '手动提交订单', url: '/pages/order/orderList/index',img: '../../img/59.png' },
+      {id: 2,name: '自动提交订单', url: '/pages/order/submitList/index',img: '../../img/54.png' },
+      {id: 3,name: '返利须知', url: '/pages/newCusterCourse/index',img: '../../img/35.png' },
       {id: 4,name: '推广中心', url: '/pages/promoteCenter/index',img: '../../img/32.png' },
       {id: 5,name: '活动列表', url: '/pages/hotactive/index',img: '../../img/33.png' },
-      {id: 6,name: '视频教程', url: '',img: '../../img/25.jpg' },
-      {id: 8,name: '联系客服', url: '',img: '../../img/21.jpg' },
+      {id: 6,name: '视频教程', url: '',img: '../../img/36.png' },
+      {id: 8,name: '联系客服', url: '',img: '../../img/21.png' },
     ]
   },
 

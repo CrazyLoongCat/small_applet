@@ -19,7 +19,7 @@
      <view class="home_name1">返利:{{item.third_promotion_info.commission_rate}}%</view>
      <view class="shares">
        <button data-item="{{item}}" class="sharesleft" bindtap="shareBtnotherUrl">
-         <image src="../../img/share1.jpg" class="sharesicon" mode=""/>
+         <image src="../../img/share1.png" class="sharesicon" mode=""/>
          赚返利
        </button>
        <view data-item="{{item}}" class="sharesright" bindtap="shareBtnother">
