@@ -27,12 +27,12 @@ Page({
   async getShareImage() {
     const res = await request({
       method: "GET",
-      url: "/webapi/ap/user/getShareImage",
+      url: "/webapi/ap/codeType/getCodeType?codeName=shareRule",
       data: {
       }
     });
     this.setData({
-      imageUrl: this.data.baseUrl + '/webapi' + res.data
+      imageUrl: this.data.baseUrl + '/webapi' + res.data[0].codeValue
     })
   },
 

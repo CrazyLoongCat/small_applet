@@ -1,11 +1,22 @@
+.orderListBox {
+   width: 90%;
+   margin: 0 auto;
+   margin-bottom: 20rpx;
+   font-size: 32rpx;
+   padding: 30rpx;
+   border: 1px solid #999;
+   border-radius: 20rpx;
+   background-color: #fff;
+ }
 
-page {
-  padding-top: 20rpx;
-}
-.tables {
-  margin-top: 30rpx;
-  color: #fff;
-  width: 95%;
-  margin: 0 auto;
-}
+.orderListBox view {
+   height: 60rpx;
+   line-height: 60rpx;
+ }
 
+ .orderListBox .time {
+   color: #999;
+   font-size: 30rpx;
+ }
+
+ .orderListBox .name {}

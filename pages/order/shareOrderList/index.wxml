@@ -1,0 +1,24 @@
+<view>
+  <!-- 订单列表 -->
+  <view>
+    <block wx:for="{{ orderList }}" wx:key="index">
+      <view class="orderListBox">
+        <view class="name">
+          用户编号: {{item.apUserId}}
+        </view>
+        <view class="name">
+          订单金额: {{item.orderAmt}}
+        </view>
+        <view>
+          推广返利金额: {{item.returnAmt}}
+        </view>
+        <view class="time">
+          下单时间: {{item.createTime}}
+        </view>
+      </view>
+    </block>
+  </view>
+
+
+
+</view>

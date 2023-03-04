@@ -1,10 +1,19 @@
-<view class="balance">
-    <view class="tables">
-        <table-view  
-          headers="{{tableHeader}}" 
-          data="{{ row }}" 
-          stripe="{{ stripe }}"
-          border="{{ border }}"
-      />
-    </view>
-</view>
+
+<view>
+    <block wx:for="{{ row }}" wx:key="index">
+      <view class="orderListBox">
+        <view class="name">
+          提现金额（含推广金额）: {{item.rebateSum}}
+        </view>
+        <view class="name">
+          推广提现金额: {{item.rebateSumShare}}
+        </view>
+        <view class="time">
+          申请返利时间: {{item.rebateSubmitTime}}
+        </view>
+        <view class="time">
+          返利成功时间: {{item.rebateSuccessTime}}
+        </view>
+      </view>
+    </block>
+  </view>

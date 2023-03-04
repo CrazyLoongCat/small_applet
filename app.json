@@ -19,7 +19,9 @@
     "pages/promoteCenter/index",
     "pages/myTeam/index",
     "pages/erweima/index",
-    "pages/shareRule/index"
+    "pages/shareRule/index",
+    "pages/order/shareOrderList/index",
+    "pages/applyToReseller/index"
   ],
   
     "usingComponents": {

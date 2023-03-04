@@ -17,11 +17,12 @@ Page({
     canIUseGetUserProfile: false,
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
     griddata: [
-      {id: 0,name: '提现记录', url: '/pages/balanceHistory/index',img: '../../img/23.jpg' },
-      {id: 1,name: '分销订单', url: '',img: '../../img/54.jpg' },
-      {id: 2,name: '我的团队', url: '/pages/myTeam/index',img: '../../img/4059.png' },
-      {id: 3,name: '推广二维码', url: '/pages/erweima/index',img: '../../img/040.png' },
-    
+      {id: 0,name: '提现记录', url: '/pages/balanceHistory/index',img: '../../img/31.png' },
+      {id: 2,name: '我的团队', url: '/pages/myTeam/index',img: '../../img/28.png' },
+      {id: 3,name: '推广二维码', url: '/pages/erweima/index',img: '../../img/27.png' },
+      {id: 4,name: '推广规则', url: '/pages/shareRule/index',img: '../../img/29.png' },
+      {id: 5,name: '推广订单', url: '/pages/order/shareOrderList/index',img: '../../img/30.png' },
+      {id: 6,name: '分销商申请', url: '/pages/applyToReseller/index',img: '../../img/34.png' },
     ]
   },
 

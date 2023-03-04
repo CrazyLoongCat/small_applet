@@ -2,7 +2,7 @@
     <!-- 表格头 start -->
     <view 
         class="thead {{ border ? 'thead-border' : ''}} header-row-class-name" 
-        style="width:100%"
+        style="width:{{ scrolWidth }}rpx;"
     >
       <view 
         wx:for="{{ headers }}" 
@@ -19,7 +19,7 @@
     <scroll-view 
         scroll-y="true" 
         class="tbody"
-        style="width:100%; height:{{ height ? height : 'auto' }};" 
+        style="width:{{ scrolWidth }}rpx; height:{{ height ? height : 'auto' }};" 
     >
       <block 
         wx:if="{{ data.length > 0 }}" 

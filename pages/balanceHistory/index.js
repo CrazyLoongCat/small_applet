@@ -8,28 +8,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tableHeader: [
-      {
-        prop: 'payPlatformAccount',
-        width: 180,
-        label: '账号'
-      },
-      {
-        prop: 'rebateSum',
-        width: 150,
-        label: '金额'
-      },
-      {
-        prop: 'rebateStatusName',
-        width: 120,
-        label: '状态'
-      },
-      {
-        prop: 'rebateSuccessTime',
-        width: 200,
-        label: '提现日期',
-      },
-    ],
     stripe: false,
     border: true,
     outBorder: true,
@@ -55,7 +33,6 @@ Page({
       data: {
       }
     });
-    console.log(res,'7777')
     if( res.code == 0 ){
       if( res.data.records.length > 0 ){
         res.data.records.forEach( item => {
@@ -74,6 +51,7 @@ Page({
           if( item.refuseReason  === null){
             item.refuseReason = ''
           }
+          item.rebateSumShare = item.rebateSumClShare+item.rebateSumHandleShare
         })
       }
       this.setData({
